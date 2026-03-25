@@ -1,1 +1,84 @@
+#username als variable mit input
+username = str(input("Pick your username: "))
+print(f"Nutzername ist {username}" )
+print(f"Hallo {username}, wilkommen im Spiel.")
+def start(): #Klasse Start 
+    print(r"""
+     ________  ________  _______   ________   ________             
+    |\   __  \|\   __  \|\  ___ \ |\   ____\ |\   ____\            
+    \ \  \|\  \ \  \|\  \ \   __/|\ \  \___|_\ \  \___|_           
+     \ \   ____\ \   _  _\ \  \_|/_\ \_____  \\ \_____  \          
+      \ \  \___|\ \  \\  \\ \  \_|\ \|____|\  \\|____|\  \         
+       \ \__\    \ \__\\ _\\ \_______\____\_\  \ ____\_\  \        
+        \|__|     \|__|\|__|\|_______|\_________\\_________\       
+     ________  _________  ________  _\|_________\|_________|       
+    |\   ____\|\___   ___\\   __  \|\   __  \|\___   ___\\  \      
+    \ \  \___|\|___ \  \_\ \  \|\  \ \  \|\  \|___ \  \_\ \  \     
+     \ \_____  \   \ \  \ \ \   __  \ \   _  _\   \ \  \ \ \  \    
+      \|____|\  \   \ \  \ \ \  \ \  \ \  \\  \|   \ \  \ \ \__\   
+        ____\_\  \   \ \__\ \ \__\ \__\ \__\\ _\    \ \__\ \|__|   
+       |\_________\   \|__|  \|__|\|__|\|__|\|__|    \|__|     ___ 
+       \|_________|                                           |\__\
+                                                              \|__|
+          """)
+    StartOrExit = int(input("Starten oder beenden? (1/2) "))
+    if StartOrExit == 1:
+        def house():    #Haus als neue Klasse
+            print("Du wachst Zuhause auf.")  #Story
+            print("du machst dich fertig und gehst aus dem Haus")
+            print("Wie willst du zur Schule gehen? ")
+            print(r"""
+                       __________
+                      ///////////\
+                     ///////////  \
+                     |    _    |  |
+                     |[] | | []|[]|
+                     |   | |   |  |""")
+
+            print("1-Zu Fuß")    #Entscheidungen
+            print("2-Fahrrad")
+            print("3-Bus")
+            print("4-Zuhause bleiben")
+            wahl = int(input("Wie willst du zur Schule"))
+            if wahl==1:
+                print("du gehst zu Fuß")
+            elif wahl == 2:
+                print("Du fährst mit dem Fahrrad")
+                def fahrrad():
+                    print("Du fährst mit dem Fahrrad zur Schule")
+                fahrrad()
+
+            elif wahl == 3:
+                print("Du fährst mit dem Bus")
+            elif wahl == 4:
+                print("Du bleibst zu Hause")
+                def zuhause_bleiben():  #Definiton des Hausarrest Endings
+                    print(" Deine ELtern sehen dich, und schimpfen dich aus.")
+                    print(r"""
+                         .-""""""-.
+                       .'  \\  //  '.
+                      /   O      O   \
+                     :                :
+                     |                |  
+                     :       __       :
+                      \  .-"`  `"-.  /
+                       '.          .'
+                         '-......-'""")
+                    
+                    print("ENDE: 6 Monate Hausarrest")
+                zuhause_bleiben() #Ausführen
+            else:
+                print("error, restart")
+                house() #Bei house() neu Anfangen
+        house() #Ausführem
+    elif StartOrExit == 2:
+        print("Tschau Kakao!")
+        exit()
+    else:   #Bei alles anderem außer 1/2
+        print("error")
+        start()
+
+
+start() #Ausführen
+
 
