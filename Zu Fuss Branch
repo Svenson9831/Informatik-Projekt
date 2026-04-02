@@ -1,1 +1,53 @@
+#username als variable mit input
+username = str(input("Pick your username: "))
+print(f"Hallo {username}, wilkommen im Spiel.")
+def start(): #Funktion Start 
+    StartOrExit = int(input("Starten oder beenden? (1/2) "))
+    if StartOrExit == 1:
+        house() #Ausführem
+    elif StartOrExit == 2:
+        print("Tschau Kakao!")
+        exit()
+    else:   #Bei alles anderem außer 1/2
+        print("error")
+        start()
+
+
+def house():    #Haus als neue Funktion für die erste Entscheidung
+           
+            print("Du wachst Zuhause auf.")  #Story
+            print("du machst dich fertig und gehst aus dem Haus")
+            print("Wie willst du zur Schule gehen? ")
+            print("1-Zu Fuß")    #Entscheidungen
+            print("2-Fahrrad")
+            print("3-Bus")
+            print("4-Zuhause bleiben")
+           
+            wahl = int(input("Wie willst du zur Schule: "))
+           
+            if wahl==1:
+                print("du gehst zu Fuß")
+            elif wahl == 2:
+                print("Du fährst mit dem Fahrrad")
+                def fahrrad():
+                    print("Du fährst mit dem Fahrrad zur Schule")
+                fahrrad()
+            elif wahl == 3:
+                print("Du fährst mit dem Bus")
+            elif wahl == 4:
+                print("Du bleibst zu Hause")
+                zuhause_bleiben() #Ausführen
+            else:
+                print("error, restart")
+                house() #Bei house() neu Anfangen
+
+                def zuhause_bleiben():  #Definiton des Hausarrest Endings
+                         print(" Deine ELtern sehen dich, und schimpfen dich aus.")
+                         print("ENDE: 6 Monate Hausarrest")
+            return wahl
+            
+          
+
+
+start() #Ausführen
 
