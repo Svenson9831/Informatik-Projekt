@@ -1,17 +1,17 @@
 #username als variable mit input
 username = str(input("Pick your username: "))
 print(f"Hallo {username}, wilkommen im Spiel.")
+print(" ")
 def start(): #Funktion Start 
     StartOrExit = int(input("Starten oder beenden? (1/2) "))
     if StartOrExit == 1:
-        house() #Ausführem
+        house() #Erst die Funktion audführen, dann definieren -> Struktur
     elif StartOrExit == 2:
         print("Tschau Kakao!")
         exit()
     else:   #Bei alles anderem außer 1/2
         print("error")
-        start()
-
+        start() #Zurück zum Start
 
 def house():    #Haus als neue Funktion für die erste Entscheidung
            
@@ -22,32 +22,37 @@ def house():    #Haus als neue Funktion für die erste Entscheidung
             print("2-Fahrrad")
             print("3-Bus")
             print("4-Zuhause bleiben")
-           
+            global wahl
             wahl = int(input("Wie willst du zur Schule: "))
-           
-            if wahl==1:
-                print("du gehst zu Fuß")
-            elif wahl == 2:
-                print("Du fährst mit dem Fahrrad")
-                def fahrrad():
-                    print("Du fährst mit dem Fahrrad zur Schule")
-                fahrrad()
-            elif wahl == 3:
-                print("Du fährst mit dem Bus")
-            elif wahl == 4:
-                print("Du bleibst zu Hause")
-                zuhause_bleiben() #Ausführen
-            else:
-                print("error, restart")
-                house() #Bei house() neu Anfangen
+            match wahl:
+                 case 1:
+                     print("du gehst zu Fuß")
+                 case 2:
+                     print("Du fährst mit dem Fahrrad zur Schule")
+                 case 3: 
+                     print("Du fährst mit dem Bus")
+                 case 4:
+                     print("Du bleibst zu Hause")
+                     zuhause_bleiben() #Erst ausführen, dann definieren
+                 case _:
+                     print("error, restart")
+                     house() #Bei house() neu Anfangen
 
-                def zuhause_bleiben():  #Definiton des Hausarrest Endings
-                         print(" Deine ELtern sehen dich, und schimpfen dich aus.")
-                         print("ENDE: 6 Monate Hausarrest")
-            return wahl
-            
-          
+                     def zuhause_bleiben():  #Definiton des Hausarrest Endings
+                           print(" Deine ELtern sehen dich, und schimpfen dich aus.")
+                           print("ENDE: 6 Monate Hausarrest")
+   
+start()   
 
+match wahl:
+    case "1":
+          ZuFußgehen()
+    case "2":
+          Fahrradfahren()
+    case "3":
+          Busfahren()
+    case "4":
+          Zuhausebleiben()
 
-start() #Ausführen
-
+def ZuFußgehen():
+     print("Du entscheidest dich dazu, zu Fuß zu gehen.")
