@@ -40,28 +40,46 @@ def Szene_1():              #Szene 1 als Erste Entscheidung
 
 def Fahrradfahren():
     print("Du fährst mit dem Fahrrad.")
+    global x
+    x = 2
 
 def Busfahren():
     print("Du fährst mit dem Bus.")
+    global x
+    x =3
 
 def zuhause_bleiben():  #Definiton des Hausarrest Endings
                    print(" Deine ELtern sehen dich, und schimpfen dich aus.")
                    print("ENDE: 6 Monate Hausarrest")
+                  
 
 def ZuFußgehen():       #Funktion für den ZuFuß Zweig
                print("Du entscheidest dich dazu, zu Fuß zu gehen.")
-                  #Random Funktion zum zufälligen Auswählen des Ereignisses
-               global Ereignis_1ZF        #Globale Variable zum wiederverwenden
+               global x
+               x = 1
+               global Ereignis_1ZF  #Random globale Variable zum zufälligen Auswählen des Ereignisses
                Ereignis_1ZF = random.randint(1,3)    #Variable mit Parametern
                print(Ereignis_1ZF)  # NUR TEMPORÄR!!
-
+        
+               
 Szene_1() #Ausführen der szene 1
 
-def ZuFuß_2():           #Fokus auf Zufußgehen, daher erstmal nur das erweitern des Zu FUß zweiges mit einer neuen Szene für Zu Fuß
+def Szene_2():
+      if x == 1:
+            ZuFuß_2(Ereignis_1ZF)
+      elif x == 2:
+            print("Fahhrad Placeholder")
+      elif x ==3:
+            print("Bus Placeholder")
+                       
+
+def ZuFuß_2(Ereignis_1ZF):           #Fokus auf Zufußgehen, daher erstmal nur das erweitern des Zu Fuß zweiges mit einer neuen Szene für Zu Fuß
+    
       match Ereignis_1ZF:      #Wir nehmen die zufälligen Werte aus Ereignis_1ZF und geben ihnen verschiedene cases für Ereignisse
             case 1:        #Ereignis Stolpern
                   print("Hoppla! Du übersiehst einen Stein und stolperst. RIP")
                   print("ENDE: Krankenhausbesuch um 7:30 in der Früh.")
+
             case 2:        #Ereignis Fremder mann
                   print("Ein Fremder Mann bietet dir an, dich mit dem Auto mitzunehmen")
                   Wahl_mitnehmen = int(input("1 - Zustimmen   2 - Ablehen   "))   #Wahl ob man einsteigt
@@ -73,14 +91,53 @@ def ZuFuß_2():           #Fokus auf Zufußgehen, daher erstmal nur das erweiter
                         elif Ereignis_mitnehmen == 2:
                               print("ENDE: Pech gehabt, du steckst mit dem Fremden im Stau fest")
                         elif Ereignis_mitnehmen == 3:
-                              print("Hat man dir als Kind nicht gesagt, man steigt nicht in das Auto von Fremden leuten?")
+                              print("Hat man dir als Kind nicht gesagt, dass man nicht in Autos von Fremden Leuten einsteigt?")
                               print("ENDE: Entführt (Selber Schuld)")
+                  elif Wahl_mitnehmen == 2:
+                        print("Du lehnst dankend ab und gehst zu Fuß weiter.../nWar das Wohl eine gute Entscheidung?")
+                        global x
+                        x = 7
+
             case 3:              #Ereignis alte Dame
                   print("Du siehst eine alte Dame die Schwierigkeiten hat, Ihren Einkauf zu tragen. Hilfst du Ihr?")
+                  Wahl_helfen = int(input("1 - Helfen   2 - Weitergehen "))
+                  if Wahl_helfen == 1:
+                        print("Du entscheidest dich, der Dame zu helfen")  
+                        x = 5
+                  elif Wahl_helfen ==2: 
+                        print("Du entscheidest dich, eiskalt an der alten Dame vorbeizugehen und ihr nicht zu helfen")
+                      
+                        x = 6
             
 
+Szene_2()
 
-ZuFuß_2() #Ausführen der Zweiten Entscheidung im Zu Fuß Zweig
+def Szene_3():
+      if x == 6:
+            Karma_Ende()
+      elif x == 5:
+            Einladung()
+      elif x == 7:
+            Schule()
+
+
+def Karma_Ende():
+      print("Du kommst rechtzeitig zur Schule an, aber auf welche Kosten? Du schreibst unerwartet einen Mathetest in der ersten Stunde...")
+      print("Aufgrund deines Gewissens kannst du dich nicht konzentrieren und du kriegst eine 6")
+      print("ENDE: Karma is real")
+
+def Einladung():
+      print("Du trägst ihren Einkauf zum Haus der alten Dame, das zum Glück nicht weit entfernt war./nDort angekommen bietet die Dame dir an, sie kurz zu besuchen, da diese alleine lebt und sich sehr einsam fühlt.")
+      wahl = int(input("Nimmst du die Einladung an? 1 - Ja   2 - Nein "))
+
+def Schule():
+      print("Du kommst in der Schule an... aber zu spät.")
+      global Schule_1ZF
+      Schule_1ZF = random.randint(1,3)
+      print(Schule_1ZF)
+
+Szene_3()
+     
 
                   
                         
