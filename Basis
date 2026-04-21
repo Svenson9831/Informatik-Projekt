@@ -39,9 +39,15 @@ def Szene_1():              #Szene 1 als Erste Entscheidung
           zuhause_bleiben()  
 
 def Fahrradfahren():
-    print("Du fährst mit dem Fahrrad.")
+    print("Du entscheidest dich mit dem Fahrrad zu fahren.")
     global x
     x = 2
+    global IrgendEinEreignis 
+    IrgendEinEreignis =  1 #random.randint(1,5)
+
+        
+
+
 
 def Busfahren():
     print("Du fährst mit dem Bus.")
@@ -69,11 +75,41 @@ def Szene_2():
             global y
             y = 1
       elif x == 2:
-            print("Fahhrad Placeholder")
+            Fahrad_2(IrgendEinEreignis)
             y = 2
       elif x ==3:
             print("Bus Placeholder")
             y = 3            
+
+def Fahrad_2(IrgendEinEreignis):
+      if IrgendEinEreignis == 1: # 1 = Unfall
+            print("Du baust einen Umfall" \
+            "Du hast zwei Optionen:" \
+            "1. Wegfahren" \
+            "2.  Nach der Person sehen")
+            Wahl = int(input("Deine Wahl: ")) #Fragt nach der Wahl
+            if Wahl == 1: # Wenn erste Wahl gemacht
+                  print("Ende:" \
+                  "Du kommst leicht angekratzt in der Schule an") #Erste Wahl
+            elif Wahl == 2: # Wenn zweite Wahl gemacht
+                  IrgendeinAnderesEreignis = random.randint(1,4) # 1/4 Wahrscheinlichkeit dass Person nicht verletzt
+                  if IrgendeinAnderesEreignis == 1: # Wenn Person nicht verlezt
+                        print("Die Person ist verlezt- Du gelangst in einen Rechtsstreit") #Text in der Konsole
+                        RechtsstreitGewonnen = random.randint(1,10) # 10% Wahrscheinlichkeit dass Rechtsstreit gewonnen
+                        if RechtsstreitGewonnen == 1: # Wenn gewonnen
+                              print("Ende: Du gewwinst den Rechtsstreit" \
+                              "Du kommst viel zu spät in der Schule an") #Text in der Konsole
+                        else: # Wenn nicht
+                              print("Du verlierst den Rechtsstreit" \
+                              "Ende: Du kommst in den Jugendknast") # Mehr text
+                  else:
+                        print("Der Person geht es gut. Sie lässt dich gehen:" \
+                        "Du kommst rechtzeitig an der Schule an (Ende)")
+            else: 
+                  print("error")
+                  Fahrad_2(IrgendEinEreignis) # Wenn die Wahl nicht 1 oder 2 ist.
+      else:
+            print("Ende: Du kommst rechtzeitig an") #yay
 
 def ZuFuß_2(Ereignis_1ZF):    
             #Fokus auf Zufußgehen, daher erstmal nur das erweitern des Zu Fuß zweiges mit einer neuen Szene für Zu Fuß
