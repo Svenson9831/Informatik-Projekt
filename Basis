@@ -43,7 +43,7 @@ def Fahrradfahren():
     global x
     x = 2
     global IrgendEinEreignis 
-    IrgendEinEreignis =  1 #random.randint(1,5)
+    IrgendEinEreignis = random.randint(1,5)
 
         
 
