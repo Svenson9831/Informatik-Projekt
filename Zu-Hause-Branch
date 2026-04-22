@@ -97,9 +97,20 @@ def Zuhause_2(Zh1_zf):
            print("Du legst dich schlafen und träumst von deinem Mathelehrer")
            print("ENDE: Der schlimmste Albtraum aller Zeiten")	
            
+          
+          
           elif Wahl_Zh1 ==2:
             print(" Du gehst raus und merkst direkt, dass du irgendwas vergessen hast. Du fasst dir in die Hosentaschen und erinnerst dich: Du hast deinen Schlüssel vergessen.")
             print("Tja, blöd gelaufen! Jetzt hast du die wahl...")
+            global x
+            x=1
+             
+      
+          elif Wahl_Zh1 ==3:
+            print("Du hast dich dazu entschieden Zuhause zubleiben.")
+            print("Du latschst zum Kühlschrank um nach was zu snacken zu suchen.")
+            x=2
+
 
            
            
@@ -155,6 +166,13 @@ def Szene_3(y):
       elif y == 3:
             print("Bus Placeholder_2")
             z = 3
+      elif y ==4:
+            Zuhause_3(x)
+            z = 4
+
+def Zuhause_3(x):
+      if x==1
+       global Wahl_Zh2
 
 def ZuFuß_3(x):
       if x == 6:
