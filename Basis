@@ -53,7 +53,7 @@ def Busfahren():
 def zuhause_bleiben():  #Definiton des Hausarrest Endings
                   print(" Deine ELtern sehen dich, und schimpfen dich aus.")
                   print("ENDE: 6 Monate Hausarrest") # Ich will nicht stören aber du kannst unten "exit()" eingeben damit das Programm aufhört und keine Fehler anzeigt
-                  exit()
+                  
 
 def ZuFußgehen():       #Funktion für den ZuFuß Zweig
                print("Du entscheidest dich dazu, zu Fuß zu gehen.")
