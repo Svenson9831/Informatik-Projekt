@@ -173,6 +173,11 @@ def Szene_3(y):
 def Zuhause_3(x):
       if x==1
        global Wahl_Zh2
+       Wahl_Zh2 int(input("placeholder"))
+      
+
+      elif x ==2
+      Wahl_Zh2 int(input("placeholder"))
 
 def ZuFuß_3(x):
       if x == 6:
@@ -270,7 +275,5 @@ def cookies ():
               
 Szene_5(c)
 
-                  
-                        
 
 
