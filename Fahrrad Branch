@@ -1,1 +1,51 @@
+def Fahrradfahren():
+    print("Du entscheidest dich mit dem Fahrrad zu fahren.")
+    global x
+    x = 2
+    global IrgendEinEreignis 
+    IrgendEinEreignis =  random.randint(1,2)
 
+def Fahrad_2(IrgendEinEreignis):
+      match IrgendEinEreignis:
+            case 1:
+                  print("Du kommst rechtzeitig an")
+            case 2:
+                  print("Du baust einen Unfall mit jemanden")
+                  Wahl1 = int(input("1. Wegrennen       2. Nach der Person sehen  "))
+                  if Wahl1 == 1:
+                        print("Du kommst angekrazt in die Schule")
+                  elif Wahl1 == 2:
+                        print("Du gehst zur Person hin.")
+                        global x
+                        x = 10
+
+def Fahrrad_3(IrgendEinEreignis):
+      if IrgendEinEreignis == 10:
+            PersonVerlezt = random.randint(11,12)
+            global x
+            if PersonVerlezt == 11:
+                  x = 11
+            else:
+                  x = 12
+      else:
+            exit()
+
+def Fahrrad_4(PersonVerlezt):
+      match PersonVerlezt:
+            case 11:
+                  print("Person ist verletzt. Du gelangst in ein Rechtsstreit")
+                  global x
+                  x = random.randint(13,14)
+            case 12:
+                  print("Der Person geht es gut. Sie lässt dich gehen")
+                  print("Du kommst rechtzeitig in die Schule (Ende)")
+                  exit() #Damit der Code nicht weiterarbeitet. Das ist die einfachste Lösung
+
+def Fahrad_Rechtsstreit(Gewonnen):
+      input("Um die Ergebnisse zu sehen: Drücke Enter ")
+      match Gewonnen:
+            case 13:
+                  print("Gewonnen")
+            case 14:
+                  print("Verloren")
+                  
