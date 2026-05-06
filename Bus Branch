@@ -100,7 +100,9 @@ def platten():
       
       
 def Bus_Rechtzeitig():
-      None
+      print("Ende: Der Bus kommt zum Glück pünktlich und du kommst rechtzeitig in der Schule an")
+
+
       
 def Bus_verpasst():
       None
