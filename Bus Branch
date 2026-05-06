@@ -1,4 +1,4 @@
-import random #Random Funktion im Vorraus importieren
+mport random #Random Funktion im Vorraus importieren
 username = str(input("Pick your username: "))
 print(f"Hallo {username}, wilkommen im Spiel.")
 print(" ")
@@ -105,7 +105,12 @@ def Bus_Rechtzeitig():
 
       
 def Bus_verpasst():
-      None
+      print("Der Bus kommt zu früh und fährt dir vor deiner Nase weg")
+      print("So schnell kommt kein Bus mehr und du musst zu Fuß zur Schule")
+      global Ereignis_Wald
+      Ereignis_Wald=random.randint(1,2)
+      global x
+      x = 1
                   
             
        
@@ -170,7 +175,7 @@ def Bus_3(x):
       if x == 1:
         platten_2(Ereignis_Wald)   
       elif x ==2 :
-            Bus_angekommen()
+        Bus_angekommen(Ereignis_Wald)
             
             
 def platten_2(Ereignis_Wald):
@@ -303,6 +308,9 @@ def cookies ():
                     print("ENDE: Zuspät und Blamiert")
               
 Szene_5(c)
+
+
+
 
 
 
