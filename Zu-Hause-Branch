@@ -108,7 +108,7 @@ def Zuhause_2(Zh1_zf):
       
           elif Wahl_Zh1 ==3:
             print("Du hast dich dazu entschieden Zuhause zubleiben.")
-            print("Du latschst zum Kühlschrank um nach was zu snacken zu suchen.")
+            print("Du latschst zum Kühlschrank um nach was zu snacken zu suchen - Aber warte mal - Ist das ein gekühlter Jägermeister?")
             x=2
 
 
@@ -173,11 +173,23 @@ def Szene_3(y):
 def Zuhause_3(x):
       if x==1
        global Wahl_Zh2
-       Wahl_Zh2 int(input("placeholder"))
-      
+       Wahl_Zh2 int(input("Willst du lieber vor der Tür warten bis deine Eltern wiederkommen (1) oder willst du versuchen durch das Fenster reinzuklettern (2)"))
+            if Wahl_Zh2 == 1:
+                  print("placeholder")
+                  global x
+                  x =1
 
+            elif Wahl_Zh2 == 2:
+                  print("placeholder")
+                  x = 2
       elif x ==2
-      Wahl_Zh2 int(input("placeholder"))
+      Wahl_Zh2 int(input("Wirst du den Jägermeister trinken (1) oder machst du dir ein einfaches Sandwich? (2)"))
+            if Wahl_Zh2 == 1:
+                  print("placeholder")
+                  x = 3
+            elif Wahl_Zh2 == 2:
+                  print("placeholder")
+                  x = 4
 
 def ZuFuß_3(x):
       if x == 6:
@@ -221,7 +233,10 @@ def Szene_4(z):
       elif z == 3:
             print("Bus Placeholder_3")
             c = 3
-
+      elif z == 4:
+            Zuhause_4(x)
+            c = 4
+           
 def ZuFuß_4(x):
     if x == 8:
        Alte_Dame_3(wahl_einladung)
@@ -274,6 +289,8 @@ def cookies ():
                     print("ENDE: Zuspät und Blamiert")
               
 Szene_5(c)
+
+
 
 
 
