@@ -127,12 +127,12 @@ def Fremder_Mann():
 
                         elif Ereignis_mitnehmen == 2:
 
-                              print("ENDE: Pech gehabt, du steckst mit dem Fremden im Stau fest")
+                              print("ENDE: Pech gehabt, du steckst mit dem Fremden im Stau fest.")
 
                         elif Ereignis_mitnehmen == 3:
 
                               print("Hat man dir als Kind nicht gesagt, dass man nicht in Autos von Fremden Leuten einsteigt?")
-                              print("ENDE: Entführt (Selber Schuld)")
+                              print("ENDE: Entführt. (Selber Schuld)")
 
       elif Wahl_mitnehmen == 2:
 
@@ -147,12 +147,12 @@ def Alte_Dame_1():
        Wahl_helfen = int(input("1 - Helfen   2 - Weitergehen "))
        if Wahl_helfen == 1:
 
-                        print("Du entscheidest dich dazu, der Dame zu helfen")  
+                        print("Du entscheidest dich dazu, der Dame zu helfen. (Guter Junge!) ")  
                         x = 5
 
        elif Wahl_helfen ==2: 
 
-                        print("Du entscheidest dich dazu, eiskalt an der alten Dame vorbeizugehen und ihr nicht zu helfen")
+                        print("Du entscheidest dich dazu, eiskalt an der alten Dame vorbeizugehen und ihr nicht zu helfen.")
                         x = 6     
 
 Szene_2()
@@ -194,11 +194,11 @@ def Fahrrad_3(IrgendEinEreignis):
 
 def Karma_Ende():
       print("Du kommst rechtzeitig zur Schule an, aber auf welche Kosten? Du schreibst unerwartet einen Mathetest in der ersten Stunde...")
-      print("Aufgrund deines Gewissens kannst du dich nicht konzentrieren und du kriegst eine 6")
-      print("ENDE: Karma is real")
+      print("Aufgrund deines Gewissens kannst du dich nicht konzentrieren und du kriegst eine 6.")
+      print("ENDE: Karma is real (Hehehehaw)")
 
 def Alte_Dame_2():
-      print("Du trägst ihren Einkauf zum Haus der alten Dame, das zum Glück nicht weit entfernt war.\nDort angekommen bietet die Dame dir an, sie kurz zu besuchen, da diese alleine lebt und sich sehr einsam fühlt.")
+      print("Du trägst ihren Einkauf zum Haus der alten Dame, das zum Glück nicht weit entfernt war.\nDort angekommen bietet die Dame dir an, sie kurz zu besuchen, da diese alleine lebt und sich sehr einsam fühlt (Top 10 Guilt Trips).")
       global wahl_einladung
       wahl_einladung = int(input("Nimmst du die Einladung an? 1 - Ja   2 - Nein "))
       global x
