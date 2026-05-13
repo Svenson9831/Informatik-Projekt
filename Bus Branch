@@ -1,4 +1,4 @@
-mport random #Random Funktion im Vorraus importieren
+import random #Random Funktion im Vorraus importieren
 username = str(input("Pick your username: "))
 print(f"Hallo {username}, wilkommen im Spiel.")
 print(" ")
@@ -253,8 +253,21 @@ def Szene_4(z):
             print("Fahrrad Placeholder_3")
             c = 2
       elif z == 3:
-            print("Bus Placeholder_3")
+            Bus_4(x)
             c = 3
+
+def Bus_4(x):
+      if x==2:
+         Entkommen_Wildschwein()
+
+
+def Entkommen_Wildschwein():
+      print("was machst du um dich zu retten?")
+      print("1-Auf einen hohen Baum klettern")    
+      print("2-Versuchen vor dem Wildschwein wegzurennnen")
+      print("3-Gegen das Wildschwein kämpfen")
+      global wahl_Wildschwein
+      wahl_Wildschwein = int(input("Deine Wahl: "))
 
 def ZuFuß_4(x):
     if x == 8:
@@ -288,10 +301,36 @@ Szene_4(z)
 def Szene_5(c):
       if c == 1:
             ZuFuß_5(x)
+            global d
+            d = 1
       elif c == 2:
             print("Fahrrad Placeholder_4")
+            d = 2
       elif c == 3:
-            print("Bus Placeholder")
+            Bus_5(wahl_Wildschwein)
+            d = 3
+
+def Bus_5(wahl_Wildschwein):
+  match wahl_Wildschwein:    
+     case 1:
+          Baumklettern()
+     case 2:
+          Wegrennen()
+     case 3:
+          Kämpfen()
+
+
+def Baumklettern():
+      print("Ende: Zwar kannst du dich vor dem Wildschwein retten,aber rechtzeitig zur Schule kommst du nicht mehr")
+
+def Wegrennen():
+      global Ereignis_Baum
+      Ereignis_Baum=random.randint(1,2)
+      x = 67
+def Kämpfen():
+      print("Test")
+      
+     
 
 def ZuFuß_5(x):
       if x == 10:
@@ -309,15 +348,21 @@ def cookies ():
               
 Szene_5(c)
 
+def Szene_6(d):
+      if d == 1:
+            none
+      elif d == 2:
+           none 
+      elif d == 3:
+           if x == 67:
+            Bus_6(Ereignis_Baum)
 
+def Bus_6(Ereignis_Baum)
+ if Ereignis_Baum == 1:
+    none
+ elif Ereignis_Baum == 2:
+    none
 
-
-
-
-
-
-
-
-
+Szene_6(d)
 
 
