@@ -81,6 +81,7 @@ def Szene_2():
       elif x ==4:
            Zuhause_2(Zh1_zf)
            y= 4
+
 def Zuhause_2(Zh1_zf):
 
     match Zh1_zf:
@@ -100,7 +101,7 @@ def Zuhause_2(Zh1_zf):
           
           
           elif Wahl_Zh1 ==2:
-            print(" Du gehst raus und merkst direkt, dass du irgendwas vergessen hast. Du fasst dir in die Hosentaschen und erinnerst dich: Du hast deinen Schlüssel vergessen.")
+            print(" Du gehst wieder aus dem Haus raus und merkst direkt, dass du irgendwas vergessen hast. Du fasst dir in die Hosentaschen und erinnerst dich: Du hast deinen Schlüssel vergessen.")
             print("Tja, blöd gelaufen! Jetzt hast du die wahl...")
             global x
             x=1
@@ -175,21 +176,26 @@ def Zuhause_3(x):
        global Wahl_Zh2
        Wahl_Zh2 int(input("Willst du lieber vor der Tür warten bis deine Eltern wiederkommen (1) oder willst du versuchen durch das Fenster reinzuklettern (2)"))
             if Wahl_Zh2 == 1:
-                  print("placeholder")
-                  global x
-                  x =1
+                  print("ENDE: Deine Eltern öffnen dir die Tür. Das war das letzte mal in 2 Monaten, dass diese Tür sich für dich öffnet.")
+                 
 
             elif Wahl_Zh2 == 2:
-                  print("placeholder")
-                  x = 2
+                  print("")
+                  global x
+                  x = 1
+                  #da kommt noch was mit Random.int weil er entweder fällt oder es reinschafft
       elif x ==2
-      Wahl_Zh2 int(input("Wirst du den Jägermeister trinken (1) oder machst du dir ein einfaches Sandwich? (2)"))
+       Wahl_Zh2 int(input("Wirst du den Jägermeister trinken (1) oder machst du dir ein einfaches Sandwich? (2)"))
             if Wahl_Zh2 == 1:
-                  print("placeholder")
-                  x = 3
+                  print("Du trinkst den Jägermeister in einem Schluck aus. Du hast jetzt 75ml Alkohol mit einer Konzentration von 35 Prozent intus.")
+                  print("Du stolperst durch das Haus und kippst um. PLötzlich ist alles Schwarz.")
+                  print("Du wachst auf und das Wohnzimmer ist in ein warmes orange gefärbt.")
+                  print("Die Uhr zeigt 17:30 Uhr. Deine Eltern kommen jede sekunde nachhause.")
+                  x = 2
+                  #noch eine Entscheidung
             elif Wahl_Zh2 == 2:
-                  print("placeholder")
-                  x = 4
+                  print("ENDE: Du machst dir ein einfaches Sandwich und genießt den Rest deines Vormittags.")
+               
 
 def ZuFuß_3(x):
       if x == 6:
@@ -289,6 +295,7 @@ def cookies ():
                     print("ENDE: Zuspät und Blamiert")
               
 Szene_5(c)
+
 
 
 
