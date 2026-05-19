@@ -18,6 +18,27 @@ def Fahrad_2(IrgendEinEreignis):
                         print("Du gehst zur Person hin.")
                         global x
                         x = 10
+            case 3:
+                  print("Du hast verschlafen! Willst du den Waldweg nutzen um schneller anzukommen?")
+                  WahlWaldweg = int(input("1. Waldweg Nehmen      2. Normalen Weg benutzen"))
+                  if WahlWaldweg == 1:
+                        global x
+                        x = 16
+                  if WahlWaldweg == 2:
+                        print("Du kommst nicht den Waldweg. Du kommst spät an")
+                        exit()
+
+def Fahrrad_3(IrgendEinEreignis):
+      if IrgendEinEreignis == 10:
+            PersonVerlezt = random.randint(11,12)
+            global x
+            if PersonVerlezt == 11:
+                  x = 11
+            else:
+                  x = 12
+      elif IrgendEinEreignis == 16:
+            print("Es gibt 2 Wege. \n Entweder du nimmst den gefährlich Mountainbikeweg(schneller) oder dem See im Wald entlang, wo du vielleicht ins Wasser fällst")
+            WahlWaldWeg2 = int(input(""))
 
 def Fahrrad_3(IrgendEinEreignis):
       if IrgendEinEreignis == 10:
