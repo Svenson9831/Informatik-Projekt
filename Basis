@@ -4,10 +4,10 @@ username = str(input("Pick your username: "))
 print(f"Hallo {username}, wilkommen im Spiel.")
 print(" ")
 def start(): #Funktion Start 
-    StartOrExit = int(input("Starten oder beenden? (1/2) "))
-    if StartOrExit == 1:
+    StartOrExit = input("Starten oder beenden? (1/2) ")
+    if StartOrExit == "1":
         house() #Erst die Funktion audführen, dann definieren -> Struktur
-    elif StartOrExit == 2:
+    elif StartOrExit == "2":
         print("Tschau Kakao!")
         exit()
     else:   #Bei alles anderem außer 1/2
@@ -24,19 +24,23 @@ def house():    #Haus als neue Funktion für die erste Entscheidung
             print("3-Bus")
             print("4-Zuhause bleiben")
             global wahl     #Variable Wahl als globale Vorlage der Ersten Szene
-            wahl = int(input("Wie willst du zur Schule: "))
+            wahl = input("Auf welche Weise willst du zur Schule: ")
               
 start()                  
 def Szene_1():              #Szene 1 als Erste Entscheidung
     match wahl:    #Da Wahl vorher global gemacht wurde kann ich die Variable hier verwenden
-     case 1:      
+     case "1":      
           ZuFußgehen() 
-     case 2:
+     case "2":
           Fahrradfahren()
-     case 3:
+     case "3":
           Busfahren()
-     case 4:
+     case "4":
           zuhause_bleiben()  
+
+     case _:
+           print("Gib eine valide Antwort ein\n")
+           house()
 
 def Fahrradfahren():
     print("Du entscheidest dich mit dem Fahrrad zu fahren.")
@@ -115,9 +119,9 @@ def Stolpern_Ende():
 def Fremder_Mann():
 
       print("Ein Fremder Mann bietet dir an, dich mit dem Auto mitzunehmen")
-      Wahl_mitnehmen = int(input("1 - Zustimmen   2 - Ablehen   "))   #Wahl ob man einsteigt
+      Wahl_mitnehmen = input("1 - Zustimmen   2 - Ablehen   ")  #Wahl ob man einsteigt
 
-      if Wahl_mitnehmen == 1:
+      if Wahl_mitnehmen == "1":
 
                         Ereignis_mitnehmen = random.randint(1,3)   #Eingerückte Random Ereignisse wenn man einsteigt
 
@@ -134,27 +138,32 @@ def Fremder_Mann():
                               print("Hat man dir als Kind nicht gesagt, dass man nicht in Autos von Fremden Leuten einsteigt?")
                               print("ENDE: Entführt. (Selber Schuld)")
 
-      elif Wahl_mitnehmen == 2:
+      elif Wahl_mitnehmen == "2":
 
                         print("Du lehnst dankend ab und gehst zu Fuß weiter...\nWar das Wohl eine gute Entscheidung?")
 
                         global x
                         x = 7
-
+      else:
+            print("Gib eine gültige Antwort ein\n")
+            Fremder_Mann()
 def Alte_Dame_1():
 
        print("Du siehst eine alte Dame die Schwierigkeiten hat, Ihren Einkauf zu tragen. Hilfst du Ihr?")
-       Wahl_helfen = int(input("1 - Helfen   2 - Weitergehen "))
-       if Wahl_helfen == 1:
+       Wahl_helfen = input("1 - Helfen   2 - Weitergehen ")
+       if Wahl_helfen == "1":
 
                         print("Du entscheidest dich dazu, der Dame zu helfen. (Guter Junge!) ")  
                         x = 5
 
-       elif Wahl_helfen ==2: 
+       elif Wahl_helfen =="2": 
 
                         print("Du entscheidest dich dazu, eiskalt an der alten Dame vorbeizugehen und ihr nicht zu helfen.")
-                        x = 6     
+                        x = 6   
 
+       else:
+             print("Gib einen validen Wert ein")  
+             Alte_Dame_1()
 Szene_2()
 
 
@@ -200,7 +209,7 @@ def Karma_Ende():
 def Alte_Dame_2():
       print("Du trägst ihren Einkauf zum Haus der alten Dame, das zum Glück nicht weit entfernt war.\nDort angekommen bietet die Dame dir an, sie kurz zu besuchen, da diese alleine lebt und sich sehr einsam fühlt (Top 10 Guilt Trips).")
       global wahl_einladung
-      wahl_einladung = int(input("Nimmst du die Einladung an? 1 - Ja   2 - Nein "))
+      wahl_einladung = input("Nimmst du die Einladung an? 1 - Ja   2 - Nein ")
       global x
       x = 8
 
@@ -245,16 +254,20 @@ def ZuFuß_4(x):
      Schule_2(Schule_1ZF)      
       
 def Alte_Dame_3(wahl_einladung):
-            if wahl_einladung == 1:
+            if wahl_einladung == "1":
                print("Du nimmst die Einladung an und gehst in ihre Wohnung. Die Wohnung sieht alt aus, ist aber bei weitem nicht verstaubt.\nDie Dame redet über ihre Vergangenheit, ihre Familie und ihre derzeitigen Probleme und du hörst aufmerksam zu.")
                print("Nach einem mehr oder weniger kurzen Gespräch merkst du, dass es sehr knapp vor Schulbeginn ist und willst dich auf den Weg machen.\nBevor du gehst bietet sie dir Cookies an")
                global x
                x = 10
             
-            elif wahl_einladung == 2:
+            elif wahl_einladung == "2":
               print("Du lehnst die Einladung ab, die alte Dame schüttelt dir zum Dank trotzdem deine Hand und du gehst weiter zur Schule.\nDu kommst rechtzeitig zur Schule an, fühlst dich aber trotzdem leer..\nHätte es so sehr geschadet, wenn du kurz bei der Dame geblieben wärst?")
               print("ENDE: Pünktlich zur Schule aber leer im inneren")             
-          
+            
+            else:
+                  print("Gib einen validen Wert ein")
+                  Alte_Dame_2()
+
 def Schule_2(Schule_1ZF):
           match Schule_1ZF:
                 case 1:
@@ -289,14 +302,15 @@ def ZuFuß_5(x):
         cookies()
 
 def cookies ():
-         wahl_cookies = int(input("Nimmst du die cookies an?  1 - Ja    2 - Nein "))
+         wahl_cookies = input("Nimmst du die cookies an?  1 - Ja    2 - Nein ")
 
-         if wahl_cookies == 1:
+         if wahl_cookies == "1":
                 print("Die Cookies geben dir einen enormen Enerigeschub!\nENDE: Du kannst ohne Probleme zur Schule sprinten und kommst rechtzeitig zum Unterricht.")
         
-         elif wahl_cookies == 2:
+         elif wahl_cookies == "2":
                     print("Du sprintest zur Schule, da du Unterzuckert bist, kippst du vor Anstrengung vor der Schule um...und kommst zu spät.")
                     print("ENDE: Zuspät und Blamiert")
               
 Szene_5(c)
+
 
