@@ -183,17 +183,21 @@ def Zuhause_3(x):
                   print("")
                   global x
                   x = 1
+                  global Zufall_Zh2 
+                  Zufall_Zh2 = Random.int(1,2)
+
                   #da kommt noch was mit Random.int weil er entweder fällt oder es reinschafft
       elif x ==2
-       Wahl_Zh2 int(input("Wirst du den Jägermeister trinken (1) oder machst du dir ein einfaches Sandwich? (2)"))
-            if Wahl_Zh2 == 1:
+      global Wahl_Zh3
+       Wahl_Zh3 int(input("Wirst du den Jägermeister trinken (1) oder machst du dir ein einfaches Sandwich? (2)"))
+            if Wahl_Zh3 == 1:
                   print("Du trinkst den Jägermeister in einem Schluck aus. Du hast jetzt 75ml Alkohol mit einer Konzentration von 35 Prozent intus.")
                   print("Du stolperst durch das Haus und kippst um. PLötzlich ist alles Schwarz.")
                   print("Du wachst auf und das Wohnzimmer ist in ein warmes orange gefärbt.")
                   print("Die Uhr zeigt 17:30 Uhr. Deine Eltern kommen jede sekunde nachhause.")
                   x = 2
                   #noch eine Entscheidung
-            elif Wahl_Zh2 == 2:
+            elif Wahl_Zh3 == 2:
                   print("ENDE: Du machst dir ein einfaches Sandwich und genießt den Rest deines Vormittags.")
                
 
@@ -242,6 +246,36 @@ def Szene_4(z):
       elif z == 4:
             Zuhause_4(x)
             c = 4
+
+def Zuhause_4(x):
+      match x:
+
+        case 1:
+            if Zufall_Zh2 == 1:
+                  print("Du kletterst langsam aber sicher hoch zu deinem Fenster.")
+                  print("Du verrutschst aber mit deinem Fuß und fällst auf den Kopf")
+                  print("Verzweifelt versuchst du noch einen letzten Hilfeschrei von dir zu geben, während du du dein warmes, klebriges Blut an deinem Nacken spürst")
+                  print("Vergeblich.")
+                  print("ENDE: Du warst dumm genug zu genug zu glauben, dass du unbeschadet davon kommst :).")
+                  print("Selber schuld.")
+            
+            elif Zufall_Zh2 == 2:
+                  print("Du kletterst die bis zum Fenster hoch und steigst hindurch.")
+                  print("Deine Eltern kommen erst in Stunden und du genießtdie Sturmfreie Bude.")
+                  print("Ende gut, alles gut.")
+
+        case 2:
+            print("Kaum realisierst du, in was für einer misslichen Lage du steckst, öffnen deine Eltern die Tür und fangen direkt an zu fragen warum das Wohnzimmer so aussieht und der Jägermeister leergetrunken am Boden liegt.")
+            global Wahl_Zh4
+            Wahl_Zh4 int(input("Sagst du lieber die Wahrheit (1), oder tischst du ihnen die erstbeste Lüge auf?"))
+            if Wahl_Zh4 == 1:
+                  print("Du erzählst ihnen die Wahrheit, und sicherst dir die nächsten 2 Monate in einzelhaft ab.")
+                  print("ENDE: Hausarrest für eine seeehhhr lange Zeit. ")
+            
+            elif Wahl_Zh4 == 2:
+                  print("Du sagst deinen Eltern, dass du genau so verwundert bist wie sie und keine Ahnung hast.")
+                  print("Natürlich glauben sie dir nicht, weil sie den Alkohol an dir riechen. Sie "rütteln dich wach" und schicken dich dann auf dein Zimmer, wo du deine nächsten 6 monate auch bleiben wirst.")
+                  print("ENDE: Das wird ein langes halbes Jahr ;).")
            
 def ZuFuß_4(x):
     if x == 8:
@@ -295,6 +329,7 @@ def cookies ():
                     print("ENDE: Zuspät und Blamiert")
               
 Szene_5(c)
+
 
 
 
