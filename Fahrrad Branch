@@ -9,24 +9,42 @@ def Fahrad_2(IrgendEinEreignis):
       match IrgendEinEreignis:
             case 1:
                   print("Du kommst rechtzeitig an")
+                  exit()
             case 2:
                   print("Du baust einen Unfall mit jemanden")
                   Wahl1 = int(input("1. Wegrennen       2. Nach der Person sehen  "))
                   if Wahl1 == 1:
                         print("Du kommst angekrazt in die Schule")
+                        exit()
                   elif Wahl1 == 2:
                         print("Du gehst zur Person hin.")
                         global x
                         x = 10
             case 3:
                   print("Du hast verschlafen! Willst du den Waldweg nutzen um schneller anzukommen?")
-                  WahlWaldweg = int(input("1. Waldweg Nehmen      2. Normalen Weg benutzen"))
-                  if WahlWaldweg == 1:
-                        global x
-                        x = 16
-                  if WahlWaldweg == 2:
-                        print("Du kommst nicht den Waldweg. Du kommst spät an")
-                        exit()
+                  while True:
+                        WahlWaldweg = int(input("1. Waldweg Nehmen      2. Normalen Weg benutzen\n"))
+                        try:
+                              if WahlWaldweg == 1:
+                                    print("Es gibt 2 Wege. \n Entweder du nimmst den gefährlich Mountainbikeweg(schneller) oder dem See im Wald entlang, wo du vielleicht ins Wasser fällst")
+                                    WahlWaldWeg2 = int(input("1. Mountainbikeweg    2. Seeweg\n"))
+                                    while True:
+                                          try:
+                                                if WahlWaldWeg2 == 1:
+                                                      print("Du bist auf dem Mountainbikeweg ausgerutscht und bist gestorben")
+                                                      exit()
+                                                elif WahlWaldWeg2 == 2:
+                                                      print("Du hast den Seeweg genommen. Du bist rechtzeitig angekommen!  \n Happy Ending!")
+                                                      exit()
+                                                else:
+                                                      print("Ungültige Eingabe! Versuche es erneut")
+                                          except ValueError:
+                                                print("Ungültige Eingabe! Versuche es erneut")
+                              elif WahlWaldweg == 2:
+                                    print("Du kommst nicht den Waldweg. Du kommst spät an")
+                                    exit()
+                        except ValueError:
+                              print("Ungültige Eingabe! Versuche es erneut")
 
 def Fahrrad_3(IrgendEinEreignis):
       if IrgendEinEreignis == 10:
@@ -36,21 +54,6 @@ def Fahrrad_3(IrgendEinEreignis):
                   x = 11
             else:
                   x = 12
-      elif IrgendEinEreignis == 16:
-            print("Es gibt 2 Wege. \n Entweder du nimmst den gefährlich Mountainbikeweg(schneller) oder dem See im Wald entlang, wo du vielleicht ins Wasser fällst")
-            WahlWaldWeg2 = int(input(""))
-
-def Fahrrad_3(IrgendEinEreignis):
-      if IrgendEinEreignis == 10:
-            PersonVerlezt = random.randint(11,12)
-            global x
-            if PersonVerlezt == 11:
-                  x = 11
-            else:
-                  x = 12
-      else:
-            exit()
-
 def Fahrrad_4(PersonVerlezt):
       match PersonVerlezt:
             case 11:
@@ -69,4 +72,3 @@ def Fahrad_Rechtsstreit(Gewonnen):
                   print("Gewonnen")
             case 14:
                   print("Verloren")
-                  
