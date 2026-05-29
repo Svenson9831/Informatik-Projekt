@@ -1,9 +1,9 @@
 #username als variable mit input
 import random #Random Funktion im Vorraus importieren
 username = str(input("Pick your username: "))
-print(f"Hallo {username}, wilkommen im Spiel.")
-print(" ")
-def start(): #Funktion Start 
+print(f"Hallo {username}, wilkommen im Spiel.\n")
+def Spiel():                   #Spielfunktion um das Programm bei bedarf neu laufen zu lassen, mehr dazu ganz unten
+ def start(): #Funktion Start 
     StartOrExit = input("Starten oder beenden? (1/2) ")     #inputs für Spielerentscheidungen
     if StartOrExit == "1":         
         house() #Erst die Funktion audführen, dann definieren -> Struktur
@@ -14,11 +14,11 @@ def start(): #Funktion Start
         print("error")
         start() #Zurück zum Start
 
-def house():    #Haus als neue Funktion für die erste Entscheidung
+ def house():    #Haus als neue Funktion für die erste Entscheidung
            
             print("Du wachst Zuhause auf.")  #Story
             print("du machst dich fertig und gehst aus dem Haus")
-            print(r"""  
+            print(r"""                   #print r um die Zeichen genauso auszugeben
                           /\
                          /  \
                         /    \
@@ -27,16 +27,16 @@ def house():    #Haus als neue Funktion für die erste Entscheidung
                        | |  | |
                        |_|__|_|
                              """)
-            print("Wie willst du zur Schule gehen? ")
+            print("Wie willst du zur Schule gehen?\n ")
             print("1-Zu Fuß")    #Entscheidungen
             print("2-Fahrrad")
             print("3-Bus")
             print("4-Zuhause bleiben")
             global wahl     #Variable Wahl als globale Vorlage der Ersten Szene
-            wahl = input("Auf welche Weise willst du zur Schule: ")
+            wahl = input("Auf welche Weise willst du zur Schule:\n ")
               
-start()                  
-def Szene_1():              #Szene 1 als Erste Entscheidung
+ start()                  
+ def Szene_1():              #Szene 1 als Erste Entscheidung
     match wahl:    #Da Wahl vorher global gemacht wurde kann ich die Variable hier verwenden
      case "1":         #Auswertung von wahl
           ZuFußgehen()     #Gliederung in verschiedene Branches
@@ -50,34 +50,34 @@ def Szene_1():              #Szene 1 als Erste Entscheidung
      case _:
            print("Gib eine valide Antwort ein\n")      #match case_ Funktion um ungültige Antworten abzufangen
            house()        #Zurück zu House()
-def Fahrradfahren():
+ def Fahrradfahren():
     print("Du entscheidest dich mit dem Fahrrad zu fahren.")
     global x
     x = 2
     global IrgendEinEreignis 
     IrgendEinEreignis =  random.randint(1,2)
 
-def Busfahren():
+ def Busfahren():
     print("Du fährst mit dem Bus.")
     global x
     x =3
 
-def zuhause_bleiben():  #Definiton des Hausarrest Endings
+ def zuhause_bleiben():  #Definiton des Hausarrest Endings
                   print(" Deine ELtern sehen dich, und schimpfen dich aus.")
                   print("ENDE: 6 Monate Hausarrest") # Ich will nicht stören aber du kannst unten "exit()" eingeben damit das Programm aufhört und keine Fehler anzeigt
                   
 
-def ZuFußgehen():       #Funktion für den ZuFuß Zweig
+ def ZuFußgehen():       #Funktion für den ZuFuß Zweig
                print("Du entscheidest dich dazu, zu Fuß zu gehen.")
                global x        #globale Variablen wie hier x zum wiedererkennen des Haupt-Entscheidungsstamm
                x = 1
                global Ereignis_1ZF  #Random globale Variable zum zufälligen Auswählen des Ereignisses
-               Ereignis_1ZF = random.randint(1,3)   #Random Variable mit Parametern als Zahlenbereich
+               Ereignis_1ZF = random.randint(1,3)  #Random Variable mit Parametern als Zahlenbereich
         
                
-Szene_1() #Ausführen der szene 1
+ Szene_1() #Ausführen der szene 1
 
-def Szene_2():         #In Szene 2 werden die Hauptstammvariablen (hier x, später y,z,c) ausgewertet und führen zur nächsten Hauptstamm Funktion
+ def Szene_2():         #In Szene 2 werden die Hauptstammvariablen (hier x, später y,z,c) ausgewertet und führen zur nächsten Hauptstamm Funktion
       if x == 1:
             ZuFuß_2(Ereignis_1ZF) #Nächster Teil des Hauptstammes
             global y
@@ -89,7 +89,7 @@ def Szene_2():         #In Szene 2 werden die Hauptstammvariablen (hier x, spät
             print("Bus Placeholder")
             y = 3            
 
-def Fahrad_2(IrgendEinEreignis):
+ def Fahrad_2(IrgendEinEreignis):
       match IrgendEinEreignis:
             case 1:
                   print("Du kommst rechtzeitig an")
@@ -103,7 +103,7 @@ def Fahrad_2(IrgendEinEreignis):
                         global x
                         x = 10
                   
-def ZuFuß_2(Ereignis_1ZF):    
+ def ZuFuß_2(Ereignis_1ZF):    
       match Ereignis_1ZF:      #Wir nehmen die zufälligen Werte aus Ereignis_1ZF und geben ihnen verschiedene cases für Ereignisse
             case 1:   #Ereignis Stolpern
               Stolpern_Ende()    
@@ -112,10 +112,10 @@ def ZuFuß_2(Ereignis_1ZF):
             case 3:              #Ereignis alte Dame
                 Alte_Dame_1()
 
-def Stolpern_Ende():
-       print("Hoppla! Du übersiehst einen Stein und stolperst. RIP")
+ def Stolpern_Ende():
+       print("\nHoppla! Du übersiehst einen Stein und stolperst. RIP")
        print("ENDE: Krankenhausbesuch um 7:30 in der Früh.")
-       print(rf"""         
+       print(rf"""                      #Print r um alles unverändert auszugeben, Print f um Werte von Variablen auszugeben. Beides kann zu Print rf kombiniert werden
                      _______
                     /       \
                    /         \
@@ -126,21 +126,23 @@ def Stolpern_Ende():
                   |           |
                   |___________|   
                              """)
-       exit()
+       return                                   #Hinter jedem Ende ein Return um die Spielfunktion zu verlassen, danach geht es zur while Schleife ganz Unten um das Spiel neu laufen zu lassen
+       
+       
 
-def Fremder_Mann():
-      print("Ein Fremder Mann bietet dir an, dich mit dem Auto mitzunehmen")
+ def Fremder_Mann():
+      print("\nEin Fremder Mann bietet dir an, dich mit dem Auto mitzunehmen")
       Wahl_mitnehmen = input("1 - Zustimmen   2 - Ablehen   ")  #Wahl ob man in das Auto einsteigt
       if Wahl_mitnehmen == "1":
                         Ereignis_mitnehmen = random.randint(1,3)   #Random Ereignisse wenn man einsteigt
                         if Ereignis_mitnehmen == 1:                                                      # Verschiedene Unterereignisse / Enden abhängig von Ereignis_mitnehmen
-                            print("ENDE: Glück gehabt, er hat dich rechtzeitlich zur Schule gebracht.")
-                            exit()
+                            print("\nENDE: Glück gehabt, er hat dich rechtzeitlich zur Schule gebracht.")
+                            return
                         elif Ereignis_mitnehmen == 2:
-                              print("ENDE: Pech gehabt, du steckst mit dem Fremden im Stau fest.")
-                              exit()
+                              print("\nENDE: Pech gehabt, du steckst mit dem Fremden im Stau fest.")
+                              return
                         elif Ereignis_mitnehmen == 3:
-                              print("Hat man dir als Kind nicht gesagt, dass man nicht in Autos von Fremden Leuten einsteigt?")
+                              print("\nHat man dir als Kind nicht gesagt, dass man nicht in Autos von Fremden Leuten einsteigt?")
                               print("ENDE: Entführt. (Selber Schuld)")
                               print(r"""
                                   ______
@@ -148,32 +150,33 @@ def Fremder_Mann():
                               |___________|
                                  O     O
                                     """) 
-                              exit()
+                              return
+                        
       elif Wahl_mitnehmen == "2":
-                        print("Du lehnst dankend ab und gehst zu Fuß weiter...\nWar das Wohl eine gute Entscheidung?")
+                        print("\nDu lehnst dankend ab und gehst zu Fuß weiter...\nWar das Wohl eine gute Entscheidung?")
                         global x
                         x = 7             #Jetzt verwenden wir x um die Position des Spielers im Story-Entscheidungsbaum zu speichern
       else:
-            print("Gib eine gültige Antwort ein\n")
+            print("\nGib eine gültige Antwort ein\n")
             Fremder_Mann()
-def Alte_Dame_1():                        
-       print("Du siehst eine alte Dame die Schwierigkeiten hat, Ihren Einkauf zu tragen. Hilfst du Ihr?")
+ def Alte_Dame_1():                        
+       print("\nDu siehst eine alte Dame die Schwierigkeiten hat, Ihren Einkauf zu tragen. Hilfst du Ihr?")
        Wahl_helfen = input("1 - Helfen   2 - Weitergehen ")
        if Wahl_helfen == "1":
-                        print("Du entscheidest dich dazu, der Dame zu helfen. (Guter Junge!) ")  
+                        print("\nDu entscheidest dich dazu, der Dame zu helfen. (Guter Junge!) ")  
                         global x
                         x = 5
        elif Wahl_helfen =="2": 
-                        print("Du entscheidest dich dazu, eiskalt an der alten Dame vorbeizugehen und ihr nicht zu helfen.")
+                        print("\nDu entscheidest dich dazu, eiskalt an der alten Dame vorbeizugehen und ihr nicht zu helfen.")
                         x = 6   
 
        else:
-             print("Gib einen validen Wert ein")      #Error Funktion
+             print("\nGib einen validen Wert ein")      #Error Funktion
              Alte_Dame_1()
-Szene_2()
+ Szene_2()
 
 
-def Szene_3(y):
+ def Szene_3(y):
       if y == 1:          #Hier werden wieder die Hauptstammvariablen abgefragt
             ZuFuß_3(x)
             global z
@@ -185,7 +188,7 @@ def Szene_3(y):
             print("Bus Placeholder_2")
             z = 3
 
-def ZuFuß_3(x):
+ def ZuFuß_3(x):
       if x == 6:                    #Jetzt wird die Position des Spielers in der Story abgefragt (Nach jeder Szene und wenn es weiter geht, kommt ein x vor, dass dazu benutzt wird, um das Spiel in korrekter Reihenfolge ablaufen zu lassen)
             Karma_Ende()
       elif x == 5:
@@ -194,7 +197,7 @@ def ZuFuß_3(x):
             Schule()
 
 
-def Fahrrad_3(IrgendEinEreignis):
+ def Fahrrad_3(IrgendEinEreignis):
       if IrgendEinEreignis == 10:
             PersonVerlezt = random.randint(11,12)
             global x
@@ -207,8 +210,8 @@ def Fahrrad_3(IrgendEinEreignis):
       
 
 
-def Karma_Ende():
-      print("Du kommst rechtzeitig zur Schule an, aber auf welche Kosten? Du schreibst unerwartet einen Mathetest in der ersten Stunde...")
+ def Karma_Ende():
+      print("\nDu kommst rechtzeitig zur Schule an, aber auf welche Kosten? Du schreibst unerwartet einen Mathetest in der ersten Stunde...")
       print("Aufgrund deines Gewissens kannst du dich nicht konzentrieren und du kriegst eine 6.")
       print("ENDE: Karma is real (Hehehehaw)")
       print(rf"""
@@ -229,24 +232,24 @@ def Karma_Ende():
             
             
            """ )
-      exit()
-def Alte_Dame_2():          #Fortsetzung des Zweiges Alte Dame
-      print("Du trägst ihren Einkauf zum Haus der alten Dame, das zum Glück nicht weit entfernt war.\nDort angekommen bietet die Dame dir an, sie kurz zu besuchen, da diese alleine lebt und sich sehr einsam fühlt (Top 10 Guilt Trips).")
+      return
+ def Alte_Dame_2():          #Fortsetzung des Zweiges Alte Dame
+      print("\nDu trägst ihren Einkauf zum Haus der alten Dame, das zum Glück nicht weit entfernt war.\nDort angekommen bietet die Dame dir an, sie kurz zu besuchen, da diese alleine lebt und sich sehr einsam fühlt (Top 10 Guilt Trips).")
       global wahl_einladung
       wahl_einladung = input("Nimmst du die Einladung an? 1 - Ja   2 - Nein ")
       global x
       x = 8
 
-def Schule():            #Hier geht der Zweig mit dem Auto weiter (wenn man ablehnt)
-      print("Du kommst in der Schule an... aber zu spät.")
+ def Schule():            #Hier geht der Zweig mit dem Auto weiter (wenn man ablehnt)
+      print("\nDu kommst in der Schule an... aber zu spät.")
       global Schule_1ZF
       Schule_1ZF = random.randint(1,3)   
       global x
       x = 9
 
-Szene_3(y)
+ Szene_3(y)
 
-def Szene_4(z):             #Abfrage des Hauptstammes
+ def Szene_4(z):             #Abfrage des Hauptstammes
       if z == 1:
             ZuFuß_4(x)
             global c 
@@ -258,7 +261,7 @@ def Szene_4(z):             #Abfrage des Hauptstammes
             print("Bus Placeholder_3")
             c = 3
 
-def Fahrrad_4(PersonVerlezt):
+ def Fahrrad_4(PersonVerlezt):
       match PersonVerlezt:
             case 11:
                   print("Person ist verletzt. Du gelangst in ein Rechtsstreit")
@@ -271,32 +274,32 @@ def Fahrrad_4(PersonVerlezt):
 
 
  
-def ZuFuß_4(x):                              #Abfrage der Position
+ def ZuFuß_4(x):                              #Abfrage der Position
     if x == 8:
        Alte_Dame_3(wahl_einladung)
     elif x == 9:
      Schule_2(Schule_1ZF)      
       
-def Alte_Dame_3(wahl_einladung):
+ def Alte_Dame_3(wahl_einladung):
             if wahl_einladung == "1":
-               print("Du nimmst die Einladung an und gehst in ihre Wohnung. Die Wohnung sieht alt aus, ist aber bei weitem nicht verstaubt.\nDie Dame redet über ihre Vergangenheit, ihre Familie und ihre derzeitigen Probleme und du hörst aufmerksam zu.")
+               print("\nDu nimmst die Einladung an und gehst in ihre Wohnung. Die Wohnung sieht alt aus, ist aber bei weitem nicht verstaubt.\nDie Dame redet über ihre Vergangenheit, ihre Familie und ihre derzeitigen Probleme und du hörst aufmerksam zu.")
                print("Nach einem mehr oder weniger kurzen Gespräch merkst du, dass es sehr knapp vor Schulbeginn ist und willst dich auf den Weg machen.\nBevor du gehst bietet sie dir Cookies an")
                global x
                x = 10
             
             elif wahl_einladung == "2":
-              print("Du lehnst die Einladung ab, die alte Dame schüttelt dir zum Dank trotzdem deine Hand und du gehst weiter zur Schule.\nDu kommst rechtzeitig zur Schule an, fühlst dich aber trotzdem leer..\nHätte es so sehr geschadet, wenn du kurz bei der Dame geblieben wärst?")
+              print("\nDu lehnst die Einladung ab, die alte Dame schüttelt dir zum Dank trotzdem deine Hand und du gehst weiter zur Schule.\nDu kommst rechtzeitig zur Schule an, fühlst dich aber trotzdem leer..\nHätte es so sehr geschadet, wenn du kurz bei der Dame geblieben wärst?")
               print("ENDE: Pünktlich zur Schule aber leer im inneren")     
-              exit()        
+              return       
             
             else:
                   print("Gib einen validen Wert ein")    #Error Funktion
                   Alte_Dame_2()
 
-def Schule_2(Schule_1ZF):
+ def Schule_2(Schule_1ZF):
           match Schule_1ZF:
                 case 1:
-                      print("ENDE: Du kriegst einen Verweis.")
+                      print("\nENDE: Du kriegst einen Verweis.")
                       print(rf"""
                         +----------------------+
                         |      VERWEIS         |
@@ -313,9 +316,9 @@ def Schule_2(Schule_1ZF):
                             
                             
                             """)
-                      exit()
+                      return
                 case 2:
-                      print("Du hast zusätzlich die Hausaufgaben vergessen und der Lehrer schreibt deine Eltern an...\n ENDE: Elternbrief")
+                      print("\nDu hast zusätzlich die Hausaufgaben vergessen und der Lehrer schreibt deine Eltern an...\n ENDE: Elternbrief")
                       print(rf"""
                               +--------------------------+
                               |        ELTERNBRIEF       |
@@ -335,13 +338,14 @@ def Schule_2(Schule_1ZF):
                             
                             
                             """)
+                      return
 
 
 
 
 
                 case 3: 
-                      print("Glück gehabt! Deine Klasse hat die erste Stunde vertretung und dir wird keine Strafe gegeben!")
+                      print("\nGlück gehabt! Deine Klasse hat die erste Stunde vertretung und dir wird keine Strafe gegeben!")
                       print("ENDE: Schwein gehabt!")
                       print(r"""
                                   .'`'.'`'.
@@ -355,11 +359,11 @@ def Schule_2(Schule_1ZF):
                             
                             
                             """)
-                      exit()
+                      return
                        
-Szene_4(z)
+ Szene_4(z)
 
-def Szene_5(c):
+ def Szene_5(c):
       if c == 1:
             ZuFuß_5(x)
       elif c == 2:
@@ -367,7 +371,7 @@ def Szene_5(c):
       elif c == 3:
             print("Bus Placeholder")
 
-def Fahrad_Rechtsstreit(Gewonnen):
+ def Fahrad_Rechtsstreit(Gewonnen):
       input("Um die Ergebnisse zu sehen: Drücke Enter ")
       match Gewonnen:
             case 13:
@@ -376,21 +380,31 @@ def Fahrad_Rechtsstreit(Gewonnen):
                   print("Verloren")
                   
 
-def ZuFuß_5(x):
+ def ZuFuß_5(x):
       if x == 10:
         cookies()
 
-def cookies ():
+ def cookies ():
          wahl_cookies = input("Nimmst du die cookies an?  1 - Ja    2 - Nein ")
 
          if wahl_cookies == "1":
-                print("Die Cookies geben dir einen enormen Enerigeschub!\nENDE: Du kannst ohne Probleme zur Schule sprinten und kommst rechtzeitig zum Unterricht.")
+                print("\nDie Cookies geben dir einen enormen Enerigeschub!\nENDE: Du kannst ohne Probleme zur Schule sprinten und kommst rechtzeitig zum Unterricht.")
                 print(r"   🍪!!!!!")
-                exit()
+                return
         
          elif wahl_cookies == "2":
-                    print("Du sprintest zur Schule, da du Unterzuckert bist, kippst du vor Anstrengung vor der Schule um...und kommst zu spät.")
+                    print("\nDu sprintest zur Schule, da du Unterzuckert bist, kippst du vor Anstrengung vor der Schule um...und kommst zu spät.")
                     print("ENDE: Zuspät und Blamiert")
-                    exit()
+                    return
               
-Szene_5(c)
+ Szene_5(c)
+
+while True:                    #Spiel() so lange ausführen bis man Return ausführt
+    Spiel()
+
+    erneut_spielen = input("\n\nNochmal spielen? (j/n): ").lower()          #Dann wird über erneut_spielen geprüft ob das Spiel erneut läuft (bei j/J) oder  über break angehalten wird (bei n/N)
+
+    if erneut_spielen != "j":         #Wenn es nicht "j" ist, dann anhalten, ansonsten
+        print("Spiel beendet. Bis zum nächsten Mal!")
+        break
+    
