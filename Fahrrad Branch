@@ -22,6 +22,7 @@ def Fahrad_2(IrgendEinEreignis):
                                     print("Du gehst zur Person hin.")
                                     global x
                                     x = 10
+                              break
                         except ValueError:
                               print("Ungültige Angabe!")
             case 3:
@@ -76,4 +77,3 @@ def Fahrad_Rechtsstreit(Gewonnen):
                   print("Gewonnen")
             case 14:
                   print("Verloren")
-                  
