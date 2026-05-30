@@ -13,13 +13,17 @@ def Fahrad_2(IrgendEinEreignis):
             case 2:
                   print("Du baust einen Unfall mit jemanden")
                   Wahl1 = int(input("1. Wegrennen       2. Nach der Person sehen  "))
-                  if Wahl1 == 1:
-                        print("Du kommst angekrazt in die Schule")
-                        exit()
-                  elif Wahl1 == 2:
-                        print("Du gehst zur Person hin.")
-                        global x
-                        x = 10
+                  while True:
+                        try:
+                              if Wahl1 == 1:
+                                    print("Du kommst angekrazt in die Schule")
+                                    exit()
+                              elif Wahl1 == 2:
+                                    print("Du gehst zur Person hin.")
+                                    global x
+                                    x = 10
+                        except ValueError:
+                              print("Ungültige Angabe!")
             case 3:
                   print("Du hast verschlafen! Willst du den Waldweg nutzen um schneller anzukommen?")
                   while True:
@@ -72,3 +76,4 @@ def Fahrad_Rechtsstreit(Gewonnen):
                   print("Gewonnen")
             case 14:
                   print("Verloren")
+                  
