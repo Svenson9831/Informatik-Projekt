@@ -181,9 +181,9 @@ def Zuhause_3(x):
 
        elif Wahl_Zh2 == 2:
                   print("Sehr gewagt von dir!")
-                  global x
+                  global y
                   global Zufall_Zh2
-                  x = 1
+                  y = 1
                   import random
                   Zufall_Zh2 = random.randint(1,2)
 
@@ -196,7 +196,7 @@ def Zuhause_3(x):
                   print("Du stolperst durch das Haus und kippst um. PLötzlich ist alles Schwarz.")
                   print("Du wachst auf und das Wohnzimmer ist in ein warmes orange gefärbt.")
                   print("Die Uhr zeigt 17:30 Uhr. Deine Eltern kommen jede sekunde nachhause.")
-                  x = 2
+                  y = 2
                   #noch eine Entscheidung
        elif Wahl_Zh3 == 2:
                   print("ENDE: Du machst dir ein einfaches Sandwich und genießt den Rest deines Vormittags.")
@@ -248,8 +248,8 @@ def Szene_4(z):
             Zuhause_4(x)
             c = 4
 
-def Zuhause_4(x):
-      match x:
+def Zuhause_4(y):
+      match y:
 
         case 1:
             if Zufall_Zh2 == 1:
@@ -275,7 +275,7 @@ def Zuhause_4(x):
             
             elif Wahl_Zh4 == 2:
                   print("Du sagst deinen Eltern, dass du genau so verwundert bist wie sie und keine Ahnung hast.")
-                  print("Natürlich glauben sie dir nicht, weil sie den Alkohol an dir riechen.Sie "rütteln dich wach" und schicken dich dann auf dein Zimmer, wo du deine nächsten 6 monate auch bleiben wirst.")
+                  print("Natürlich glauben sie dir nicht, weil sie den Alkohol an dir riechen.Sie *rütteln dich wach* und schicken dich dann auf dein Zimmer, wo du deine nächsten 6 monate auch bleiben wirst.")
                   print("ENDE: Das wird ein langes halbes Jahr ;).")
            
 def ZuFuß_4(x):
