@@ -130,7 +130,7 @@ def Spiel():                   #Spielfunktion um das Programm bei bedarf neu lau
                                           except ValueError:
                                                 print("Ungültige Eingabe! Versuche es erneut")
                               elif WahlWaldweg == 2:
-                                    print("Du kommst nicht den Waldweg. Du kommst spät an")
+                                    print("Du nimmst nicht den Waldweg und du kommst zu spät  zur Schula an.")
                                     return
                         except ValueError:
                               print("Ungültige Eingabe! Versuche es erneut")
