@@ -106,26 +106,30 @@ def Spiel():                   #Spielfunktion um das Programm bei bedarf neu lau
         
         case 2: #Ereignis Sturmfrei
          print("Du hast schwein gehabt! Deine Eltern sind bereits in der Arbeit. Zeit die Sau raus zu lassen! Oder?")
-         Wahl_Zh1 = int(input(" 1 - schlafen gehen 2 - raus gehen 3 - zuhause faulenzen"))
+         Wahl_Zh1 = input(" 1 - schlafen gehen 2 - raus gehen 3 - zuhause faulenzen")
           
-         if Wahl_Zh1 ==1:
+         if Wahl_Zh1 =="1":
            print("Du legst dich schlafen und träumst von deinem Mathelehrer")
            print("ENDE: Der schlimmste Albtraum aller Zeiten")	
            return
            
           
           
-         elif Wahl_Zh1 ==2:
+         elif Wahl_Zh1 =="2":
             print(" Du gehst wieder aus dem Haus raus und merkst direkt, dass du irgendwas vergessen hast. Du fasst dir in die Hosentaschen und erinnerst dich: Du hast deinen Schlüssel vergessen.")
             print("Tja, blöd gelaufen! Jetzt hast du die wahl...")
             global x
             x=1
              
       
-         elif Wahl_Zh1 ==3:
+         elif Wahl_Zh1 =="3":
             print("Du hast dich dazu entschieden Zuhause zubleiben.")
             print("Du latschst zum Kühlschrank um nach was zu snacken zu suchen - Aber warte mal - Ist das ein gekühlter Jägermeister?")
-            x=2       
+            x=2
+
+         else:
+               print("Das ist kein gültiger Wert. Probieren wir das nochmal...")
+               Zuhause_2(Zh1_zf)
 
  def Fahrad_2(IrgendEinEreignis):
       match IrgendEinEreignis:
@@ -272,33 +276,39 @@ def Spiel():                   #Spielfunktion um das Programm bei bedarf neu lau
  def Zuhause_3(x):
       if x==1:
        global Wahl_Zh2
-       Wahl_Zh2 = int(input("Willst du lieber vor der Tür warten bis deine Eltern wiederkommen (1) oder willst du versuchen durch das Fenster reinzuklettern (2)"))
-       if Wahl_Zh2 == 1:
+       Wahl_Zh2 = input("Willst du lieber vor der Tür warten bis deine Eltern wiederkommen (1) oder willst du versuchen durch das Fenster reinzuklettern (2)")
+       if Wahl_Zh2 == "1":
                   print("ENDE: Deine Eltern öffnen dir die Tür. Das war das letzte mal in 2 Monaten, dass diese Tür sich für dich öffnet.")
                   return
                  
 
-       elif Wahl_Zh2 == 2:
+       elif Wahl_Zh2 == "2":
                   print("Sehr gewagt von dir!")
                   global y
                   global Zufall_Zh2
                   y = 1
                   Zufall_Zh2 = random.randint(1,2)
+      
+       else:
+               print("Das ist kein gültiger Wert. Probieren wir das nochmal...")
+               Zuhause_3(x)
 
-                  #da kommt noch was mit Random.int weil er entweder fällt oder es reinschafft
-       elif x ==2:
+      elif x ==2:
         global Wahl_Zh3
-        Wahl_Zh3 = int(input("Wirst du den Jägermeister trinken (1) oder machst du dir ein einfaches Sandwich? (2)"))
-        if Wahl_Zh3 == 1:
+        Wahl_Zh3 = input("Wirst du den Jägermeister trinken (1) oder machst du dir ein einfaches Sandwich? (2)")
+        if Wahl_Zh3 == "1":
                   print("Du trinkst den Jägermeister in einem Schluck aus. Du hast jetzt 75ml Alkohol mit einer Konzentration von 35 Prozent intus.")
                   print("Du stolperst durch das Haus und kippst um. PLötzlich ist alles Schwarz.")
                   print("Du wachst auf und das Wohnzimmer ist in ein warmes orange gefärbt.")
                   print("Die Uhr zeigt 17:30 Uhr. Deine Eltern kommen jede sekunde nachhause.")
                   y = 2
                   #noch eine Entscheidung
-       elif Wahl_Zh3 == 2:
+        elif Wahl_Zh3 == "2":
                   print("ENDE: Du machst dir ein einfaches Sandwich und genießt den Rest deines Vormittags.")
                   return
+        else:
+               print("Das ist kein gültiger Wert. Probieren wir das nochmal...")
+               Zuhause_3(x)
 
 
  def Fahrrad_3(IrgendEinEreignis):
@@ -374,7 +384,7 @@ def Spiel():                   #Spielfunktion um das Programm bei bedarf neu lau
                   print("Du kletterst langsam aber sicher hoch zu deinem Fenster.")
                   print("Du verrutschst aber mit deinem Fuß und fällst auf den Kopf")
                   print("Verzweifelt versuchst du noch einen letzten Hilfeschrei von dir zu geben, während du du dein warmes, klebriges Blut an deinem Nacken spürst")
-                  print("Vergeblich.")
+                  print("Vergebens.")
                   print("ENDE: Du warst dumm genug zu genug zu glauben, dass du unbeschadet davon kommst :).")
                   print("Selber schuld.")
                   return
@@ -387,17 +397,19 @@ def Spiel():                   #Spielfunktion um das Programm bei bedarf neu lau
         case 2:
             print("Kaum realisierst du, in was für einer misslichen Lage du steckst, öffnen deine Eltern die Tür und fangen direkt an zu fragen warum das Wohnzimmer so aussieht und der Jägermeister leergetrunken am Boden liegt.")
             global Wahl_Zh4
-            Wahl_Zh4 = int(input("Sagst du lieber die Wahrheit (1), oder tischst du ihnen die erstbeste Lüge auf?"))
-            if Wahl_Zh4 == 1:
+            Wahl_Zh4 = input("Sagst du lieber die Wahrheit (1), oder tischst du ihnen die erstbeste Lüge auf?")
+            if Wahl_Zh4 == "1":
                   print("Du erzählst ihnen die Wahrheit, und sicherst dir die nächsten 2 Monate in einzelhaft ab.")
                   print("ENDE: Hausarrest für eine seeehhhr lange Zeit. ")
                   return
-            elif Wahl_Zh4 == 2:
+            elif Wahl_Zh4 == "2":
                   print("Du sagst deinen Eltern, dass du genau so verwundert bist wie sie und keine Ahnung hast.")
                   print("Natürlich glauben sie dir nicht, weil sie den Alkohol an dir riechen.Sie *rütteln dich wach* und schicken dich dann auf dein Zimmer, wo du deine nächsten 6 monate auch bleiben wirst.")
                   print("ENDE: Das wird ein langes halbes Jahr ;).")
                   return
-           
+            else:
+               print("Das ist kein gültiger Wert. Probieren wir das nochmal...")
+               Zuhause_4(y)
 
  def Fahrrad_4(PersonVerlezt):
       match PersonVerlezt:
