@@ -23,7 +23,7 @@ def house():    #Haus als neue Funktion für die erste Entscheidung
             print("3-Bus")
             print("4-Zuhause bleiben")
             global wahl     #Variable Wahl als globale Vorlage der Ersten Szene
-            wahl = input("Wie willst du zur Schule: "))
+            wahl = input("Wie willst du zur Schule: ")
               
 start()                  
 def Szene_1():              #Szene 1 als Erste Entscheidung
@@ -69,14 +69,14 @@ def ZuFußgehen():       #Funktion für den ZuFuß Zweig
 Szene_1() #Ausführen der szene 1
 
 def Szene_2():
-      if x == 1:
+      if x == "1":
             ZuFuß_2(Ereignis_1ZF)
             global y
             y = 1
-      elif x == 2:
+      elif x == "2":
             print("Fahhrad Placeholder")
             y = 2
-      elif x ==3:
+      elif x == "3":
             Bus_2(Ereignis_BusZF)
             y = 3  
             
