@@ -60,7 +60,7 @@ def Spiel():                   #Spielfunktion um das Programm bei bedarf neu lau
  def Busfahren():
     print("Du fährst mit dem Bus.")
     global x
-    x ="3"
+    x = 3
     global Ereignis_BusZF
     Ereignis_BusZF=random.randint(1,3)
 
@@ -82,10 +82,10 @@ def Spiel():                   #Spielfunktion um das Programm bei bedarf neu lau
                
  Szene_1(wahl) #Ausführen der szene 1
 
- def Szene_2(x):         #In Szene 2 werden die Hauptstammvariablen (hier x, später y,z,c) ausgewertet und führen zur nächsten Hauptstamm Funktion
+ def Szene_2(x):   
+      global y      #In Szene 2 werden die Hauptstammvariablen (hier x, später y,z,c) ausgewertet und führen zur nächsten Hauptstamm Funktion
       if x == 1:
             ZuFuß_2(Ereignis_1ZF) #Nächster Teil des Hauptstammes
-            global y
             y = 1      #Nächste Hauptstamm Variable
       elif x == 2:
             Fahrad_2(IrgendEinEreignis)
@@ -586,10 +586,14 @@ def Spiel():                   #Spielfunktion um das Programm bei bedarf neu lau
  def Szene_5(c):
       if c == 1:
             ZuFuß_5(x)
+            global d
+            d = 1
       elif c == 2:
             Fahrad_Rechtsstreit(x)
+            d = 2
       elif c == 3:
               Bus_5(wahl_Wildschwein)
+              d = 3
 
  def Bus_5(wahl_Wildschwein):
   match wahl_Wildschwein:    
@@ -680,5 +684,3 @@ while True:                    #Spiel() so lange ausführen bis man Return ausf�
     if erneut_spielen != "j":         #Wenn es nicht "j" ist, dann anhalten, ansonsten
         print("Spiel beendet. Bis zum nächsten Mal!")
         break
-    
-    
