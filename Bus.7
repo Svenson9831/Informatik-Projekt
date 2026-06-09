@@ -326,13 +326,13 @@ def Szene_5(c):
 
 def Bus_5(wahl_Wildschwein):
   match wahl_Wildschwein:    
-     case 1:
+     case "1":
           Baumklettern()
 
-     case 2:
+     case "2":
           Wegrennen()
 
-     case 3:
+     case "3":
           Kämpfen()
       
 
@@ -394,6 +394,7 @@ def kämpfen_2(Ereignis_kämpfen):
  if Ereignis_kämpfen==1:
       print("Das Wildschwein ist gar nicht so stark und du gewinnst")
       print("Ende: Respekt hast du dir verdient, aber du kommst trotzdem zu spät zur Schule")
+      return
  elif Ereignis_kämpfen==2:
       print("Ende: Das Wildschwein ist viel zu stark und du wirst tödlich verletzt.RIP.")
       return
