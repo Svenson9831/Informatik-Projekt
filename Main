@@ -1,5 +1,6 @@
 #username als variable mit input
 import random #Random Funktion im Vorraus importieren
+wahl_Wildschwein= None
 username = str(input("Pick your username: "))
 print(f"Hallo {username}, wilkommen im Spiel.\n")
 def Spiel():                   #Spielfunktion um das Programm bei bedarf neu laufen zu lassen, mehr dazu ganz unten
