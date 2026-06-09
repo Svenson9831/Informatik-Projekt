@@ -307,6 +307,7 @@ def Schule_2(Schule_1ZF):
                 case 3: 
                       print("Glück gehabt! Deine Klasse hat die erste Stunde vertretung und dir wird keine Strafe gegeben!")
                       print("ENDE: Schwein gehabt!")
+                      return
                        
 Szene_4(z)
 
@@ -337,6 +338,7 @@ def Bus_5(wahl_Wildschwein):
 
 def Baumklettern():
       print("Ende: Zwar kannst du dich vor dem Wildschwein retten,aber rechtzeitig zur Schule kommst du nicht mehr")
+      return    
 
 def Wegrennen():
       print("Du entscheidest dich wegzurennen")
@@ -363,10 +365,12 @@ def cookies ():
 
          if wahl_cookies == "1":
                 print("Die Cookies geben dir einen enormen Enerigeschub!\nENDE: Du kannst ohne Probleme zur Schule sprinten und kommst rechtzeitig zum Unterricht.")
+                return
         
          elif wahl_cookies == "2":
                     print("Du sprintest zur Schule, da du Unterzuckert bist, kippst du vor Anstrengung vor der Schule um...und kommst zu spät.")
                     print("ENDE: Zuspät und Blamiert")
+                    return
               
 Szene_5(c)
 
@@ -380,15 +384,17 @@ def Bus_6(Ereignis_Wegrennen):
  if Ereignis_Wegrennen== 1:
     print("Ende: Du kommst mit einem großen Schrecken und schaffst es noch rechtzeitig in die Schule!")
     print("Glück gehabt")
+    return
  elif Ereignis_Wegrennen== 2:
     print("Das Wildschwein hat dich eingeholt")
     print("Ende:RIP, Das Wildschwein macht kurzen Prozess mit dir")
-
+    return
 def kämpfen_2(Ereignis_kämpfen):
  if Ereignis_kämpfen==1:
       print("Das Wildschwein ist gar nicht so stark und du gewinnst")
       print("Ende: Respekt hast du dir verdient, aber du kommst trotzdem zu spät zur Schule")
  elif Ereignis_kämpfen==2:
       print("Ende: Das Wildschwein ist viel zu stark und du wirst tödlich verletzt.RIP.")
+      return
 
 Szene_6(d)
