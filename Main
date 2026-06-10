@@ -440,6 +440,13 @@ def Spiel():                   #Spielfunktion um das Programm bei bedarf neu lau
  def Bus_4(x):
       if x==2:
          Entkommen_Wildschwein()
+ print(rf""" 
+          --.__.--
+       ___\(0_0)/
+    ~~/     (OO)
+      \  __  /
+      `='`='=
+               """)
 
 
  def Entkommen_Wildschwein():
