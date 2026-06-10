@@ -74,12 +74,12 @@ def Spiel():                   #Spielfunktion um das Programm bei bedarf neu lau
     global Ereignis_BusZF
     Ereignis_BusZF=random.randint(1,3)
 
- def zuhause_bleiben():  #Definiton des Hausarrest Endings
+ def zuhause_bleiben():  #Definiton des Anfangs
                    print(" Du gehst wieder ins Haus und wirfst die Schultasche auf den Boden.")
                    global x
                    x =4
                    global Zh1_zf
-                   Zh1_zf= random.randint(1, 2)
+                   Zh1_zf= random.randint(1, 2) # deklarieren einer zufälligen Variable für zwei verschiede Abzweigungen
                   
 
  def ZuFußgehen():       #Funktion für den ZuFuß Zweig
@@ -134,7 +134,7 @@ def Spiel():                   #Spielfunktion um das Programm bei bedarf neu lau
       x = 1
              
 
- def Zuhause_2(Zh1_zf):
+ def Zuhause_2(Zh1_zf): #Definition des ersten Szenarios
 
     match Zh1_zf:
         
@@ -158,7 +158,7 @@ def Spiel():                   #Spielfunktion um das Programm bei bedarf neu lau
             print(" Du gehst wieder aus dem Haus raus und merkst direkt, dass du irgendwas vergessen hast. Du fasst dir in die Hosentaschen und erinnerst dich: Du hast deinen Schlüssel vergessen.")
             print("Tja, blöd gelaufen! Jetzt hast du die wahl...")
             global x
-            x=1
+            x=1 #deklarieren der Hauptstammvariabel
              
       
          elif Wahl_Zh1 ==3:
@@ -381,10 +381,10 @@ def Spiel():                   #Spielfunktion um das Programm bei bedarf neu lau
       elif x == 7:
             Schule()
       
- def Zuhause_3(x):
+ def Zuhause_3(x): #Definition der weiterführenden Abzweigungen 
       if x==1:
        global Wahl_Zh2
-       Wahl_Zh2 = int(input("Willst du lieber vor der Tür warten bis deine Eltern wiederkommen (1) oder willst du versuchen durch das Fenster reinzuklettern (2)"))
+       Wahl_Zh2 = int(input("Willst du lieber vor der Tür warten bis deine Eltern wiederkommen (1) oder willst du versuchen durch das Fenster reinzuklettern (2)")) #zweite Wahl definiert 
        if Wahl_Zh2 == 1:
                   print("ENDE: Deine Eltern öffnen dir die Tür. Das war das letzte mal in 2 Monaten, dass diese Tür sich für dich öffnet.")
                   return
@@ -395,9 +395,9 @@ def Spiel():                   #Spielfunktion um das Programm bei bedarf neu lau
                   global y
                   global Zufall_Zh2
                   y = 1
-                  Zufall_Zh2 = random.randint(1,2)
+                  Zufall_Zh2 = random.randint(1,2) #deklarieren der zweiten zufälligen variabel 
 
-                  #da kommt noch was mit Random.int weil er entweder fällt oder es reinschafft
+                  
        elif x ==2:
         global Wahl_Zh3
         Wahl_Zh3 = int(input("Wirst du den Jägermeister trinken (1) oder machst du dir ein einfaches Sandwich? (2)"))
@@ -407,7 +407,7 @@ def Spiel():                   #Spielfunktion um das Programm bei bedarf neu lau
                   print("Du wachst auf und das Wohnzimmer ist in ein warmes orange gefärbt.")
                   print("Die Uhr zeigt 17:30 Uhr. Deine Eltern kommen jede sekunde nachhause.")
                   y = 2
-                  #noch eine Entscheidung
+                  
        elif Wahl_Zh3 == 2:
                   print("ENDE: Du machst dir ein einfaches Sandwich und genießt den Rest deines Vormittags.")
                   return
