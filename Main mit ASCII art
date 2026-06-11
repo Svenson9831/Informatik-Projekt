@@ -60,8 +60,14 @@ def Spiel():                   #Spielfunktion um das Programm bei bedarf neu lau
      case _:
            print("Gib eine valide Antwort ein\n")      #match case_ Funktion um ungültige Antworten abzufangen
            exit()        #Aufgrund eines ungeklärten Fehlers lieber exit benutzen als house() damit das Programm nicht abstürzt
- def Fahrradfahren():
+ def Fahrradfahren(): #Funktion für den Fahrrad Zweig
     print("Du entscheidest dich mit dem Fahrrad zu fahren.")
+    print(r"""
+         __o
+       _ \<_
+      (_)/(_)
+  =================
+            """)
     global x
     x = 2
     global IrgendEinEreignis 
@@ -166,51 +172,95 @@ def Spiel():                   #Spielfunktion um das Programm bei bedarf neu lau
             print("Du latschst zum Kühlschrank um nach was zu snacken zu suchen - Aber warte mal - Ist das ein gekühlter Jägermeister?")
             x=2       
 
- def Fahrad_2(IrgendEinEreignis):
+def Fahrad_2(IrgendEinEreignis): #
       match IrgendEinEreignis:
-            case 1:
+            case 1: #Ereignis: Das gute Ende
                   print("Du kommst rechtzeitig an")
                   return
-            case 2:
+            case 2: #Ereignis: Unfall
                   print("Du baust einen Unfall mit jemanden")
-                  Wahl1 = int(input("1. Wegrennen       2. Nach der Person sehen  "))
-                  while True:
-                        try:
-                              if Wahl1 == 1:
+                  Wahl1 = int(input("1. Wegrennen       2. Nach der Person sehen  ")) #Wahl ob man nach der Person sehen will
+                  while True: #Schleife um die Wahl zu verifirieren und zu beenden
+                        try: #Versucht
+                              if Wahl1 == 1: #Wahl 1: Nicht nach der Person sehen
                                     print("Du kommst angekrazt in die Schule")
-                                    return
-                              elif Wahl1 == 2:
+                                    break
+                              elif Wahl1 == 2: #Wahl 2: Man sieht nach der Person.
                                     print("Du gehst zur Person hin.")
-                                    global x
+                                    global x #Nächster Hauptstamm varaible
                                     x = 10
-                              break
-                        except ValueError:
+                                    break
+                              else:
+                                    print("Ungültige Angabe!")
+                               #stoppt while Schleife
+                        except ValueError: #Falls es nicht ein integer  ist
                               print("Ungültige Angabe!")
-            case 3:
+            case 3: #Ereignis: Verschlafen
                   print("Du hast verschlafen! Willst du den Waldweg nutzen um schneller anzukommen?")
-                  while True:
-                        WahlWaldweg = int(input("1. Waldweg Nehmen      2. Normalen Weg benutzen\n"))
-                        try:
-                              if WahlWaldweg == 1:
+                  while True: #Schleife um die Wahl zu verifirieren und zu beenden
+                        WahlWaldweg = int(input("1. Waldweg Nehmen      2. Normalen Weg benutzen\n")) #Wahl, ob man den Waldweg nehmen will
+                        try: #Versuch     t
+                              if WahlWaldweg == 1:  #Waldweg genommen
+                                    print(r"""
+                                          /\      /\      /\
+                                         /  \    /  \    /  \
+                                        /^^^^\  /^^^^\  /^^^^\
+                                          ||      ||      ||
+                                          ||      ||      ||
+                                          ||      ||      ||
+                                          ||      ||      ||
+                                    ==========================
+                                    """)
                                     print("Es gibt 2 Wege. \n Entweder du nimmst den gefährlich Mountainbikeweg(schneller) oder dem See im Wald entlang, wo du vielleicht ins Wasser fällst")
                                     WahlWaldWeg2 = int(input("1. Mountainbikeweg    2. Seeweg\n"))
                                     while True:
                                           try:
                                                 if WahlWaldWeg2 == 1:
                                                       print("Du bist auf dem Mountainbikeweg ausgerutscht und bist gestorben")
+                                                      print(r"""
+                                                         __o
+                                                      _ \<_
+                                                      (_)/(_)
+
+                                                      ------------------- X -------------------
+
+                                                         __o
+                                                      _ \<_
+                                                      (_)/(_)
+                                                            \
+                                                            \
+                                                            \__
+                                                                  \__
+                                                                  \__
+                                                                        \__   (Crash)
+                                                      """)
                                                       return
                                                 elif WahlWaldWeg2 == 2:
                                                       print("Du hast den Seeweg genommen. Du bist rechtzeitig angekommen!  \n Happy Ending!")
+                                                      print(r"""
+                                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~  SEE  ~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~      ~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                                  /\        /\                /\        /\
+                                                            /  \      /  \              /  \      /  \
+                                                      __________/    \____/    \____________/    \____/    \____
+                                                            |                                            |
+                                                            |                                            |
+                                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                            Weg entlang des Sees
+                                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                      """)
                                                       return
                                                 else:
                                                       print("Ungültige Eingabe! Versuche es erneut")
-                                          except ValueError:
+                                          except ValueError: #Falls die Eingabe kein Integer ist
                                                 print("Ungültige Eingabe! Versuche es erneut")
-                              elif WahlWaldweg == 2:
+                              elif WahlWaldweg == 2: #Waldweg nicht genommen
                                     print("Du kommst nicht den Waldweg. Du kommst spät an")
                                     return
-                        except ValueError:
+                        except ValueError: #Falls die Eingabe kein Integer ist
                               print("Ungültige Eingabe! Versuche es erneut")
+                        return
                   
  def ZuFuß_2(Ereignis_1ZF):    
       match Ereignis_1ZF:      #Wir nehmen die zufälligen Werte aus Ereignis_1ZF und geben ihnen verschiedene cases für Ereignisse
@@ -415,10 +465,10 @@ def Spiel():                   #Spielfunktion um das Programm bei bedarf neu lau
 
  def Fahrrad_3(IrgendEinEreignis):
       if IrgendEinEreignis == 10:
-            PersonVerlezt = random.randint(11,12)
+            PersonVerlezt = random.randint(11,12) #50% Wahrscheinlichkeit, dass die Person verletzt ist
             global x
             if PersonVerlezt == 11:
-                  x = 11
+                  x = 11 #Jetzt verwenden wir x um die Position des Spielers im Story-Entscheidungsbaum zu speichern
             else:
                   x = 12
       
@@ -522,14 +572,33 @@ def Spiel():                   #Spielfunktion um das Programm bei bedarf neu lau
                   print("ENDE: Das wird ein langes halbes Jahr ;).")
                   return
            
-
  def Fahrrad_4(PersonVerlezt):
       match PersonVerlezt:
-            case 11:
+            case 11: #Falls die Person verletzt ist
                   print("Person ist verletzt. Du gelangst in ein Rechtsstreit")
+                  print(r"""
+                  +--------------------------------------------------+
+                  |                  GERICHTSSAAL                    |
+                  |                                                  |
+                  |   Richter/in                                     |
+                  |        ___                                       |
+                  |       |___|                                      |
+                  |        /|\                                       |
+                  |         |                                        |
+                  |                                                  |
+                  |   Zeugenstand        Angeklagter                |
+                  |       ___                ___                     |
+                  |      |___|              |___|                    |
+                  |                                                  |
+                  |   [STAATSANWALT]      [VERTEIDIGUNG]            |
+                  |                                                  |
+                  |   --------------------------------------------   |
+                  |              ÖFFENTLICHES VERFAHREN              |
+                  +--------------------------------------------------+
+                  """)
                   global x
-                  x = random.randint(13,14)
-            case 12:
+                  x = random.randint(13,14) #50% Wahrscheinlichkeit zu gewinnen
+            case 12: #Falls der Person es gut geht
                   print("Der Person geht es gut. Sie lässt dich gehen")
                   print("Du kommst rechtzeitig in die Schule (Ende)")
                   return #Damit der Code nicht weiterarbeitet. Das ist die einfachste Lösung
@@ -683,12 +752,35 @@ def Spiel():                   #Spielfunktion um das Programm bei bedarf neu lau
       x = 13
 
  def Fahrad_Rechtsstreit(Gewonnen):
-      input("Um die Ergebnisse zu sehen: Drücke Enter ")
       match Gewonnen:
             case 13:
-                  print("Gewonnen")
+                  input("Um die Ergebnisse zu sehen: Drücke Enter ") #Da wird keine Variable erstellt, sonder nur der Input von dem Spieler erwartet
+                  print(r"""
+                  ------------------------------------
+                  |           GERICHTSURTEIL         |
+                  |                                  |
+                  |   Der Rechtsstreit wurde        |
+                  |            VERLOREN             |
+                  |                                  |
+                  |   Bitte beachten Sie die        |
+                  |   weiteren rechtlichen Schritte  |
+                  |                                  |
+                  ------------------------------------
+                  """)
             case 14:
-                  print("Verloren")                 
+                  input("Um die Ergebnisse zu sehen: Drücke Enter ") #Da wird keine Variable erstellt, sonder nur der Input von dem Spieler erwartet
+                  print(r"""
+                  ------------------------------------
+                  |           GERICHTSURTEIL         |
+                  |                                  |
+                  |   Der Rechtsstreit wurde        |
+                  |            GEWONNEN             |
+                  |                                  |
+                  |   Glückwunsch. Der Anspruch      |
+                  |   wurde vollständig bestätigt    |
+                  |                                  |
+                  ------------------------------------
+                  """)          
 
  def ZuFuß_5(x):
       if x == 10:
