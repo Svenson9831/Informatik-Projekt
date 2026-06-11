@@ -831,7 +831,6 @@ def Spiel():                   #Spielfunktion um das Programm bei bedarf neu lau
            if x == 67:
             Bus_6(Ereignis_Wegrennen)
            elif x==13:
-            pass
             kämpfen_2(Ereignis_kämpfen)
 
  def Bus_6(Ereignis_Wegrennen):
