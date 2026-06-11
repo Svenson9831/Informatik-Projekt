@@ -172,7 +172,7 @@ def Spiel():                   #Spielfunktion um das Programm bei bedarf neu lau
             print("Du latschst zum Kühlschrank um nach was zu snacken zu suchen - Aber warte mal - Ist das ein gekühlter Jägermeister?")
             x=2       
 
-def Fahrad_2(IrgendEinEreignis): #
+ def Fahrad_2(IrgendEinEreignis): #
       match IrgendEinEreignis:
             case 1: #Ereignis: Das gute Ende
                   print("Du kommst rechtzeitig an")
@@ -189,7 +189,7 @@ def Fahrad_2(IrgendEinEreignis): #
                                     print("Du gehst zur Person hin.")
                                     global x #Nächster Hauptstamm varaible
                                     x = 10
-                                    break
+                                    return
                               else:
                                     print("Ungültige Angabe!")
                                #stoppt while Schleife
@@ -573,10 +573,10 @@ def Fahrad_2(IrgendEinEreignis): #
                   return
            
  def Fahrrad_4(PersonVerlezt):
-      match PersonVerlezt:
-            case 11: #Falls die Person verletzt ist
-                  print("Person ist verletzt. Du gelangst in ein Rechtsstreit")
-                  print(r"""
+      if PersonVerlezt == 11:
+             #Falls die Person verletzt ist
+            print("Person ist verletzt. Du gelangst in ein Rechtsstreit")
+            print(r"""
                   +--------------------------------------------------+
                   |                  GERICHTSSAAL                    |
                   |                                                  |
@@ -596,12 +596,12 @@ def Fahrad_2(IrgendEinEreignis): #
                   |              ÖFFENTLICHES VERFAHREN              |
                   +--------------------------------------------------+
                   """)
-                  global x
-                  x = random.randint(13,14) #50% Wahrscheinlichkeit zu gewinnen
-            case 12: #Falls der Person es gut geht
-                  print("Der Person geht es gut. Sie lässt dich gehen")
-                  print("Du kommst rechtzeitig in die Schule (Ende)")
-                  return #Damit der Code nicht weiterarbeitet. Das ist die einfachste Lösung
+            global x
+            x = random.randint(113,114) #50% Wahrscheinlichkeit zu gewinnen
+      else:#Falls der Person es gut geht
+            print("Der Person geht es gut. Sie lässt dich gehen")
+            print("Du kommst rechtzeitig in die Schule (Ende)")
+            return #Damit der Code nicht weiterarbeitet. Das ist die einfachste Lösung
 
  
  def ZuFuß_4(x):                              #Abfrage der Position
@@ -753,7 +753,7 @@ def Fahrad_2(IrgendEinEreignis): #
 
  def Fahrad_Rechtsstreit(Gewonnen):
       match Gewonnen:
-            case 13:
+            case 113:
                   input("Um die Ergebnisse zu sehen: Drücke Enter ") #Da wird keine Variable erstellt, sonder nur der Input von dem Spieler erwartet
                   print(r"""
                   ------------------------------------
@@ -767,7 +767,7 @@ def Fahrad_2(IrgendEinEreignis): #
                   |                                  |
                   ------------------------------------
                   """)
-            case 14:
+            case 114:
                   input("Um die Ergebnisse zu sehen: Drücke Enter ") #Da wird keine Variable erstellt, sonder nur der Input von dem Spieler erwartet
                   print(r"""
                   ------------------------------------
@@ -780,7 +780,7 @@ def Fahrad_2(IrgendEinEreignis): #
                   |   wurde vollständig bestätigt    |
                   |                                  |
                   ------------------------------------
-                  """)          
+                  """)   
 
  def ZuFuß_5(x):
       if x == 10:
@@ -831,6 +831,7 @@ def Fahrad_2(IrgendEinEreignis): #
            if x == 67:
             Bus_6(Ereignis_Wegrennen)
            elif x==13:
+            pass
             kämpfen_2(Ereignis_kämpfen)
 
  def Bus_6(Ereignis_Wegrennen):
